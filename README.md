@@ -1,10 +1,10 @@
 ### About the project
 
 #### Who maintains and contributes to the project
-- [Mawardi Adama](https://github.com/wards-a)
+> [Mawardi Adama](https://github.com/wards-a)
 
 #### Project title
-`Website Goodiebag Custom`
+**`Website Goodiebag Custom`**
 
 #### Project description
 Website-based marketing information system for goods supply services based on customer needs at [PT Goodiebag Custom Indonesia](https://www.instagram.com/goodiebag.custom/). Examples of items provided include goodie bags, tote bags, pouches, notebooks, ballpoint pens, etc.
@@ -22,7 +22,8 @@ Website-based marketing information system for goods supply services based on cu
 #### Built with
 - [Laravel v11.x](https://laravel.com/docs/11.x/releases)
 
-`NB: More features will be added as time permits.`
+> [!Note]
+> More features will be added as time permits.
 
 <!-- <p align="center"><a href="https://laravel.com" target="_blank"><img src="https://raw.githubusercontent.com/laravel/art/master/logo-lockup/5%20SVG/2%20CMYK/1%20Full%20Color/laravel-logolockup-cmyk-red.svg" width="400" alt="Laravel Logo"></a></p>
 

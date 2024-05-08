@@ -1,1 +1,3 @@
-# goodiebag-custom
+# About the project
+
+## 

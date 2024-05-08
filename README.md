@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 <p align="center"><a href="https://laravel.com" target="_blank"><img src="https://raw.githubusercontent.com/laravel/art/master/logo-lockup/5%20SVG/2%20CMYK/1%20Full%20Color/laravel-logolockup-cmyk-red.svg" width="400" alt="Laravel Logo"></a></p>
 
 <p align="center">
@@ -64,3 +65,30 @@ If you discover a security vulnerability within Laravel, please send an e-mail t
 ## License
 
 The Laravel framework is open-sourced software licensed under the [MIT license](https://opensource.org/licenses/MIT).
+=======
+### About the project
+
+#### Who maintains and contributes to the project
+- [Mawardi Adama](https://github.com/wards-a)
+
+#### Project title
+`Website Goodiebag Custom`
+
+#### Project description
+Website-based marketing information system for goods supply services based on customer needs at [PT Goodiebag Custom Indonesia](https://www.instagram.com/goodiebag.custom/). Examples of items provided include goodie bags, tote bags, pouches, notebooks, ballpoint pens, etc.
+
+#### What the project does
+- Customers can see the products that the company can provide,
+- Customers can place orders and request quotations related to the products to be ordered.
+- Admin can manage items and order data through the dashboard menu.
+
+#### Why the project is useful
+- Customers can easily find the products they need.
+- Companies can offer products or services more widely, cheaply, and easily.
+- Companies can manage order data more organized. Such as archiving, recapping orders based on a certain time range, etc.
+
+#### Built with
+- [Laravel v11.x](https://laravel.com/docs/11.x/releases)
+
+`NB: More features will be added as time permits.`
+>>>>>>> f83d3e2031f83626b7b7e8c82aaa61cbda1483f7

@@ -1,7 +1,9 @@
 ## About the Project
 
 ### Who maintains and contributes to the project
-> [Mawardi Adama](https://github.com/wards-a)
+>[Mawardi Adama](https://github.com/wards-a) 
+
+`Absent 114`
 
 ### Project title
 **`Website Goodiebag Custom`**
@@ -13,7 +15,7 @@ Website-based marketing information system for goods supply services based on cu
 - Displays products that manufacturers can provide.
 - Display information related to product ordering and company information.
 - Handling product orders and payments.
-- Manage product information, orders and more.
+- Manage product information, orders, and more.
 
 ### Why the project is useful
 - Customers can easily find the products they need.
@@ -21,7 +23,7 @@ Website-based marketing information system for goods supply services based on cu
 - Companies can manage order data more organized. Such as archiving, recapping orders based on a certain time range, etc.
 
 ### Built with
-- [Laravel v11.x](https://laravel.com/docs/11.x/releases)
+- [Laravel 11.x](https://laravel.com/docs/11.x/releases)
 
 > [!Note]
 > More features will be added as time permits.

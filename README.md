@@ -1,7 +1,7 @@
 ## About the Project
 
 ### Who maintains and contributes to the project
->[Mawardi Adama](https://github.com/wards-a) 
+> [Mawardi Adama](https://github.com/wards-a) 
 
 `Absent 114`
 

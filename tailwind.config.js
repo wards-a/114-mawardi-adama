@@ -10,6 +10,12 @@ export default {
       fontFamily: {
         'sans': ['Open Sans', 'Arial', 'sans-serif'],
       },
+      colors: {
+        'custom-purple': '#7e3bcf',
+        'facebook-blue': '#3b5998',
+        'instagram-pink': '#ea2c59',
+        'youtube-red': '#a82400 ',
+      },
     },
   },
   plugins: [],

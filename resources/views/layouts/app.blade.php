@@ -6,14 +6,15 @@
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <title>{{ config('app.name') }} - @yield('title')</title>
     <link rel="icon" href="{{ asset('logo.png') }}" type="image/x-icon">
+    {{-- <script src="https://kit.fontawesome.com/a5a754a1f5.js" crossorigin="anonymous"></script> --}}
     @vite('resources/css/app.css')
 </head>
 <body class="box-border">
     @include('user.includes.header')
 
-    <div class="content">
+    <main>
         @yield('content')
-    </div>
+    </main>
 
     @include('user.includes.footer')
 </body>

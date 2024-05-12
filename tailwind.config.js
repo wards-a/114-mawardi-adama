@@ -15,6 +15,8 @@ export default {
         'facebook-blue': '#3b5998',
         'instagram-pink': '#ea2c59',
         'youtube-red': '#a82400 ',
+        'whatsapp-green': '#25D366',
+        'mail-blue': '#0056b3',
       },
     },
   },

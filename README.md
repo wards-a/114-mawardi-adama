@@ -24,6 +24,7 @@ Website-based marketing information system for goods supply services based on cu
 
 ### Built with
 - [Laravel 11.x](https://laravel.com/docs/11.x/releases)
+- [Tailwindcss](https://tailwindcss.com/)
 
 > [!Note]
 > More features will be added as time permits.

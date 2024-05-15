@@ -6,19 +6,10 @@ export default {
     "./resources/**/*.vue",
   ],
   theme: {
-    extend: {
-      fontFamily: {
-        'sans': ['Open Sans', 'Arial', 'sans-serif'],
-      },
-      colors: {
-        'custom-purple': '#7e3bcf',
-        'facebook-blue': '#3b5998',
-        'instagram-pink': '#ea2c59',
-        'youtube-red': '#a82400 ',
-        'whatsapp-green': '#25D366',
-        'mail-blue': '#0056b3',
-      },
+    fontFamily: {
+      sans: ['Open Sans', 'Arial', 'serif'],
     },
+    extend: { },
   },
   plugins: [],
 }

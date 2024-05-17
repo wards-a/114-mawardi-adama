@@ -1,4 +1,4 @@
-@extends('layouts.app')
+@extends('user.partials.layouts.app')
 
 @push('css')
     @vite('resources/js/slick/slick.css')
@@ -11,18 +11,17 @@
 @section('content')
 
 {{-- Carousel --}}
-@include('user.pages.home.carousel')
+@include('user.partials.pages.home.carousel')
 
 {{-- Highlight Menu --}}
-@include('user.pages.home.highlight-menu')
+@include('user.partials.pages.home.highlight-menu')
 
 {{-- main content --}}
-@include('user.pages.home.content')
+@include('user.partials.pages.home.content')
 
 @endsection
 
 @push('scripts')
-    <script src="https://code.jquery.com/jquery-2.2.4.min.js" integrity="sha256-BbhdlvQf/xTY9gja0Dq3HiwQF8LaCRTXxZKRutelT44=" crossorigin="anonymous"></script>
     @vite('resources/js/slick/slick.min.js')
     @vite('resources/js/user/homepage/carousel.js')
 @endpush

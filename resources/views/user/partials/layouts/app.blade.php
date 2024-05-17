@@ -7,17 +7,18 @@
     <title>{{ config('app.name') }} - @yield('title')</title>
     <link rel="icon" href="{{ asset('logo.png') }}" type="image/x-icon">
     @stack('css')
-    @vite('resources/css/app.css')
+    @vite('resources/css/user/app.css')
 </head>
 <body>
-    @include('user.includes.header')
+    @include('user.partials.layouts.header')
 
-    <main class="relative top-24 m-0 p-0">
+    <main class="relative top-16 m-0 p-0 lg:top-24">
         @yield('content')
     </main>
 
-    @include('user.includes.footer')
+    @include('user.partials.layouts.footer')
 
+    @stack('jquery')
     @stack('scripts')
 </body>
 </html>

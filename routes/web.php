@@ -16,36 +16,54 @@ Route::prefix('/')->name('user.')->group( function(){
         ];
 
         $menu = [
-            "text" => [
-                [
-                    "name" => "Beranda",
-                    "path" => "beranda"
-                ],
-                [
-                    "name" => "Produk",
-                    "path" => "produk",
-                    "category" => ["Goodiebag", "Tas Ransel", "Pouch"],
-                ],
-                [
-                    "name" => "Tentang Kami",
-                    "path" => "tentang-kami"
-                ],
-                [
-                    "name" => "Kontak Kami",
-                    "path" => "kontak-kami"
+            [
+                "name" => "Beranda",
+                "path" => "beranda",
+                "type" => "text"
+            ],
+            [
+                "name" => "Produk",
+                "path" => "#",
+                "type" => "text",
+                "category" => [
+                    [
+                        "name" => "Goodiebag",
+                        "path" => "produk/goodiebag",
+                        "type" => "text"
+                    ],
+                    [
+                        "name" => "Tas Ransel",
+                        "path" => "produk/tas-ransel",
+                        "type" => "text"
+                    ],
+                    [
+                        "name" => "Pouch",
+                        "path" => "produk/pouch",
+                        "type" => "text"
+                    ]
                 ],
             ],
-            "icon" => [
-                [
-                    "name" => "Buat Pesanan",
-                    "path" => "buat-pesanan",
-                    "src" => "icons.svg#icon-shopping-bag"
-                ],
-                [
-                    "name" => "Profil Pengguna",
-                    "path" => "profil",
-                    "src" => "icons.svg#icon-user-circle"
-                ],
+            [
+                "name" => "Tentang Kami",
+                "path" => "tentang-kami",
+                "type" => "text"
+            ],
+            [
+                "name" => "Kontak Kami",
+                "path" => "kontak-kami",
+                "type" => "text"
+            ],
+            [
+                "name" => "Masuk",
+                "path" => "masuk",
+                "type" => "text",
+                "src" => "icons.svg#icon-user-circle"
+            ],
+            [
+                "name" => "Buat Pesanan",
+                "path" => "buat-pesanan",
+                "type" => "icon",
+                "src" => "icons.svg#icon-shopping-bag"
             ],
         ];
 
@@ -60,36 +78,54 @@ Route::prefix('/')->name('user.')->group( function(){
         ];
 
         $menu = [
-            "text" => [
-                [
-                    "name" => "Beranda",
-                    "path" => "beranda"
-                ],
-                [
-                    "name" => "Produk",
-                    "path" => "produk",
-                    "category" => ["Goodiebag", "Tas Ransel", "Pouch"],
-                ],
-                [
-                    "name" => "Tentang Kami",
-                    "path" => "tentang-kami"
-                ],
-                [
-                    "name" => "Kontak Kami",
-                    "path" => "kontak-kami"
+            [
+                "name" => "Beranda",
+                "path" => "beranda",
+                "type" => "text"
+            ],
+            [
+                "name" => "Produk",
+                "path" => "#",
+                "type" => "text",
+                "category" => [
+                    [
+                        "name" => "Goodiebag",
+                        "path" => "produk/goodiebag",
+                        "type" => "text"
+                    ],
+                    [
+                        "name" => "Tas Ransel",
+                        "path" => "produk/tas-ransel",
+                        "type" => "text"
+                    ],
+                    [
+                        "name" => "Pouch",
+                        "path" => "produk/pouch",
+                        "type" => "text"
+                    ]
                 ],
             ],
-            "icon" => [
-                [
-                    "name" => "Buat Pesanan",
-                    "path" => "buat-pesanan",
-                    "src" => "icons.svg#icon-shopping-bag"
-                ],
-                [
-                    "name" => "Profil Pengguna",
-                    "path" => "profil",
-                    "src" => "icons.svg#icon-user-circle"
-                ],
+            [
+                "name" => "Tentang Kami",
+                "path" => "tentang-kami",
+                "type" => "text"
+            ],
+            [
+                "name" => "Kontak Kami",
+                "path" => "kontak-kami",
+                "type" => "text"
+            ],
+            [
+                "name" => "Masuk",
+                "path" => "masuk",
+                "type" => "text",
+                "src" => "icons.svg#icon-user-circle"
+            ],
+            [
+                "name" => "Buat Pesanan",
+                "path" => "buat-pesanan",
+                "type" => "icon",
+                "src" => "icons.svg#icon-shopping-bag"
             ],
         ];
 
@@ -104,36 +140,54 @@ Route::prefix('/')->name('user.')->group( function(){
         ];
 
         $menu = [
-            "text" => [
-                [
-                    "name" => "Beranda",
-                    "path" => "beranda"
-                ],
-                [
-                    "name" => "Produk",
-                    "path" => "produk",
-                    "category" => ["Goodiebag", "Tas Ransel", "Pouch"],
-                ],
-                [
-                    "name" => "Tentang Kami",
-                    "path" => "tentang-kami"
-                ],
-                [
-                    "name" => "Kontak Kami",
-                    "path" => "kontak-kami"
+            [
+                "name" => "Beranda",
+                "path" => "beranda",
+                "type" => "text"
+            ],
+            [
+                "name" => "Produk",
+                "path" => "#",
+                "type" => "text",
+                "category" => [
+                    [
+                        "name" => "Goodiebag",
+                        "path" => "produk/goodiebag",
+                        "type" => "text"
+                    ],
+                    [
+                        "name" => "Tas Ransel",
+                        "path" => "produk/tas-ransel",
+                        "type" => "text"
+                    ],
+                    [
+                        "name" => "Pouch",
+                        "path" => "produk/pouch",
+                        "type" => "text"
+                    ]
                 ],
             ],
-            "icon" => [
-                [
-                    "name" => "Buat Pesanan",
-                    "path" => "buat-pesanan",
-                    "src" => "icons.svg#icon-shopping-bag"
-                ],
-                [
-                    "name" => "Profil Pengguna",
-                    "path" => "profil",
-                    "src" => "icons.svg#icon-user-circle"
-                ],
+            [
+                "name" => "Tentang Kami",
+                "path" => "tentang-kami",
+                "type" => "text"
+            ],
+            [
+                "name" => "Kontak Kami",
+                "path" => "kontak-kami",
+                "type" => "text"
+            ],
+            [
+                "name" => "Masuk",
+                "path" => "masuk",
+                "type" => "text",
+                "src" => "icons.svg#icon-user-circle"
+            ],
+            [
+                "name" => "Buat Pesanan",
+                "path" => "buat-pesanan",
+                "type" => "icon",
+                "src" => "icons.svg#icon-shopping-bag"
             ],
         ];
 
@@ -148,36 +202,54 @@ Route::prefix('/')->name('user.')->group( function(){
         ];
 
         $menu = [
-            "text" => [
-                [
-                    "name" => "Beranda",
-                    "path" => "beranda"
-                ],
-                [
-                    "name" => "Produk",
-                    "path" => "produk",
-                    "category" => ["Goodiebag", "Tas Ransel", "Pouch"],
-                ],
-                [
-                    "name" => "Tentang Kami",
-                    "path" => "tentang-kami"
-                ],
-                [
-                    "name" => "Kontak Kami",
-                    "path" => "kontak-kami"
+            [
+                "name" => "Beranda",
+                "path" => "beranda",
+                "type" => "text"
+            ],
+            [
+                "name" => "Produk",
+                "path" => "#",
+                "type" => "text",
+                "category" => [
+                    [
+                        "name" => "Goodiebag",
+                        "path" => "produk/goodiebag",
+                        "type" => "text"
+                    ],
+                    [
+                        "name" => "Tas Ransel",
+                        "path" => "produk/tas-ransel",
+                        "type" => "text"
+                    ],
+                    [
+                        "name" => "Pouch",
+                        "path" => "produk/pouch",
+                        "type" => "text"
+                    ]
                 ],
             ],
-            "icon" => [
-                [
-                    "name" => "Buat Pesanan",
-                    "path" => "buat-pesanan",
-                    "src" => "icons.svg#icon-shopping-bag"
-                ],
-                [
-                    "name" => "Profil Pengguna",
-                    "path" => "profil",
-                    "src" => "icons.svg#icon-user-circle"
-                ],
+            [
+                "name" => "Tentang Kami",
+                "path" => "tentang-kami",
+                "type" => "text"
+            ],
+            [
+                "name" => "Kontak Kami",
+                "path" => "kontak-kami",
+                "type" => "text"
+            ],
+            [
+                "name" => "Masuk",
+                "path" => "masuk",
+                "type" => "text",
+                "src" => "icons.svg#icon-user-circle"
+            ],
+            [
+                "name" => "Buat Pesanan",
+                "path" => "buat-pesanan",
+                "type" => "icon",
+                "src" => "icons.svg#icon-shopping-bag"
             ],
         ];
 
@@ -192,36 +264,54 @@ Route::prefix('/')->name('user.')->group( function(){
         ];
 
         $menu = [
-            "text" => [
-                [
-                    "name" => "Beranda",
-                    "path" => "beranda"
-                ],
-                [
-                    "name" => "Produk",
-                    "path" => "produk",
-                    "category" => ["Goodiebag", "Tas Ransel", "Pouch"],
-                ],
-                [
-                    "name" => "Tentang Kami",
-                    "path" => "tentang-kami"
-                ],
-                [
-                    "name" => "Kontak Kami",
-                    "path" => "kontak-kami"
+            [
+                "name" => "Beranda",
+                "path" => "beranda",
+                "type" => "text"
+            ],
+            [
+                "name" => "Produk",
+                "path" => "#",
+                "type" => "text",
+                "category" => [
+                    [
+                        "name" => "Goodiebag",
+                        "path" => "produk/goodiebag",
+                        "type" => "text"
+                    ],
+                    [
+                        "name" => "Tas Ransel",
+                        "path" => "produk/tas-ransel",
+                        "type" => "text"
+                    ],
+                    [
+                        "name" => "Pouch",
+                        "path" => "produk/pouch",
+                        "type" => "text"
+                    ]
                 ],
             ],
-            "icon" => [
-                [
-                    "name" => "Buat Pesanan",
-                    "path" => "buat-pesanan",
-                    "src" => "icons.svg#icon-shopping-bag"
-                ],
-                [
-                    "name" => "Profil Pengguna",
-                    "path" => "profil",
-                    "src" => "icons.svg#icon-user-circle"
-                ],
+            [
+                "name" => "Tentang Kami",
+                "path" => "tentang-kami",
+                "type" => "text"
+            ],
+            [
+                "name" => "Kontak Kami",
+                "path" => "kontak-kami",
+                "type" => "text"
+            ],
+            [
+                "name" => "Masuk",
+                "path" => "masuk",
+                "type" => "text",
+                "src" => "icons.svg#icon-user-circle"
+            ],
+            [
+                "name" => "Buat Pesanan",
+                "path" => "buat-pesanan",
+                "type" => "icon",
+                "src" => "icons.svg#icon-shopping-bag"
             ],
         ];
 
@@ -236,43 +326,61 @@ Route::prefix('/')->name('user.')->group( function(){
         ];
 
         $menu = [
-            "text" => [
-                [
-                    "name" => "Beranda",
-                    "path" => "beranda"
-                ],
-                [
-                    "name" => "Produk",
-                    "path" => "produk",
-                    "category" => ["Goodiebag", "Tas Ransel", "Pouch"],
-                ],
-                [
-                    "name" => "Tentang Kami",
-                    "path" => "tentang-kami"
-                ],
-                [
-                    "name" => "Kontak Kami",
-                    "path" => "kontak-kami"
+            [
+                "name" => "Beranda",
+                "path" => "beranda",
+                "type" => "text"
+            ],
+            [
+                "name" => "Produk",
+                "path" => "#",
+                "type" => "text",
+                "category" => [
+                    [
+                        "name" => "Goodiebag",
+                        "path" => "produk/goodiebag",
+                        "type" => "text"
+                    ],
+                    [
+                        "name" => "Tas Ransel",
+                        "path" => "produk/tas-ransel",
+                        "type" => "text"
+                    ],
+                    [
+                        "name" => "Pouch",
+                        "path" => "produk/pouch",
+                        "type" => "text"
+                    ]
                 ],
             ],
-            "icon" => [
-                [
-                    "name" => "Buat Pesanan",
-                    "path" => "buat-pesanan",
-                    "src" => "icons.svg#icon-shopping-bag"
-                ],
-                [
-                    "name" => "Profil Pengguna",
-                    "path" => "profil",
-                    "src" => "icons.svg#icon-user-circle"
-                ],
+            [
+                "name" => "Tentang Kami",
+                "path" => "tentang-kami",
+                "type" => "text"
+            ],
+            [
+                "name" => "Kontak Kami",
+                "path" => "kontak-kami",
+                "type" => "text"
+            ],
+            [
+                "name" => "Masuk",
+                "path" => "masuk",
+                "type" => "text",
+                "src" => "icons.svg#icon-user-circle"
+            ],
+            [
+                "name" => "Buat Pesanan",
+                "path" => "buat-pesanan",
+                "type" => "icon",
+                "src" => "icons.svg#icon-shopping-bag"
             ],
         ];
 
         return view('user.order', compact('logo', 'menu'));
     })->name('order'); 
 
-    Route::get('profil', function () {
+    Route::get('masuk', function () {
         $logo = [
             "image" => "logo.png",
             "caption" => "Goodiebagcustom",
@@ -280,36 +388,54 @@ Route::prefix('/')->name('user.')->group( function(){
         ];
 
         $menu = [
-            "text" => [
-                [
-                    "name" => "Beranda",
-                    "path" => "beranda"
-                ],
-                [
-                    "name" => "Produk",
-                    "path" => "produk",
-                    "category" => ["Goodiebag", "Tas Ransel", "Pouch"],
-                ],
-                [
-                    "name" => "Tentang Kami",
-                    "path" => "tentang-kami"
-                ],
-                [
-                    "name" => "Kontak Kami",
-                    "path" => "kontak-kami"
+            [
+                "name" => "Beranda",
+                "path" => "beranda",
+                "type" => "text"
+            ],
+            [
+                "name" => "Produk",
+                "path" => "#",
+                "type" => "text",
+                "category" => [
+                    [
+                        "name" => "Goodiebag",
+                        "path" => "produk/goodiebag",
+                        "type" => "text"
+                    ],
+                    [
+                        "name" => "Tas Ransel",
+                        "path" => "produk/tas-ransel",
+                        "type" => "text"
+                    ],
+                    [
+                        "name" => "Pouch",
+                        "path" => "produk/pouch",
+                        "type" => "text"
+                    ]
                 ],
             ],
-            "icon" => [
-                [
-                    "name" => "Buat Pesanan",
-                    "path" => "buat-pesanan",
-                    "src" => "icons.svg#icon-shopping-bag"
-                ],
-                [
-                    "name" => "Profil Pengguna",
-                    "path" => "profil",
-                    "src" => "icons.svg#icon-user-circle"
-                ],
+            [
+                "name" => "Tentang Kami",
+                "path" => "tentang-kami",
+                "type" => "text"
+            ],
+            [
+                "name" => "Kontak Kami",
+                "path" => "kontak-kami",
+                "type" => "text"
+            ],
+            [
+                "name" => "Masuk",
+                "path" => "masuk",
+                "type" => "text",
+                "src" => "icons.svg#icon-user-circle"
+            ],
+            [
+                "name" => "Buat Pesanan",
+                "path" => "buat-pesanan",
+                "type" => "icon",
+                "src" => "icons.svg#icon-shopping-bag"
             ],
         ];
 

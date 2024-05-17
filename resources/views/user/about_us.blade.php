@@ -1,4 +1,4 @@
-@extends('layouts.app')
+@extends('user.partials.layouts.app')
 
 @push('css')
 @endpush

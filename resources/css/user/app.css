@@ -1,0 +1,53 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+
+@layer components {
+    .transition-s-p {
+        transition-property: width, height, font-size, top, left, right, bottom;
+        transition-duration: 0.7s;
+        transition-timing-function: ease-in-out;
+    }
+
+    .text-nav-header {
+        @apply text-xs font-semibold opacity-85 hover:text-sky-600 lg:text-sm;
+    }
+}
+
+/* Navbar */
+.menu-active {
+    @apply text-sky-600 opacity-100;
+}
+
+.navbar.shrink {
+    @apply h-12;
+}
+
+.navbar.shrink .logo img {
+    @apply w-8;
+}
+
+.navbar.shrink .logo figcaption {
+    @apply text-base lg:pt-3;
+}
+
+/* .navbar.shrink .nav-menu a {
+    @apply text-xs;
+} */
+
+/* .navbar.shrink .nav-menu .menu-icon svg {
+    @apply w-5 h-5;
+} */
+
+.navbar.shrink .nav-menu .menu-text svg {
+    @apply w-3 h-3 opacity-60;
+}
+
+.navbar.shrink .nav-menu .menu-text [class^="subMenu"] {
+    @apply top-12;
+}
+
+/* .navbar.shrink #mobile-nav #mobile-menu {
+    @apply top-12;
+} */

@@ -26,9 +26,10 @@ Website-based marketing information system for goods supply services based on cu
 - [Laravel 11.x](https://laravel.com/docs/11.x/releases)
 - [Tailwindcss](https://tailwindcss.com/)
 
+### Layout
+#### User/Guest
 <picture>
     <img alt="Screenshot of main view for the client, screenshot dimensions: nest hub max (1280x800)" src="./screenshot-app/localhost_8000_beranda(Nest Hub Max)-min.png" width="50%">
-    <img alt="Screenshot of main view for the client, screenshot dimensions: iphone X (55x812)" src="./screenshot-app/localhost_8000_beranda(iPhone X)-min.png" width="50%">
 </picture>
 
 > [!Note]

@@ -102,5 +102,3 @@
         </div>
     </div>
 </header>
-    
-@vite('resources/js/user/includes/header.js')

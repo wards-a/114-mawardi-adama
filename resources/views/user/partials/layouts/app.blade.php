@@ -8,6 +8,7 @@
     <link rel="icon" href="{{ asset('logo.png') }}" type="image/x-icon">
     @stack('css')
     @vite('resources/css/user/app.css')
+    @vite('resources/js/user/includes/header.js')
 </head>
 <body>
     @include('user.partials.layouts.header')

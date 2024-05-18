@@ -28,7 +28,6 @@ Website-based marketing information system for goods supply services based on cu
 
 <picture>
     <img alt="Screenshot of main view for the client, screenshot dimensions: nest hub max (1280x800)" src="./screenshot-app/localhost_8000_beranda(Nest Hub Max)-min.png" width="50%">
-    </br>
     <img alt="Screenshot of main view for the client, screenshot dimensions: iphone X (55x812)" src="./screenshot-app/localhost_8000_beranda(iPhone X)-min.png" width="50%">
 </picture>
 

@@ -1,5 +1,5 @@
 <header class="navbar fixed top-0 w-full z-50 bg-white shadow-md h-12 transition-s-p lg:h-16">
-    <div class="flex items-center justify-between w-4/5 h-full mx-auto relative">
+    <div class="flex items-center justify-between w-11/12 h-full mx-auto relative">
         {{-- Logo and company name --}}
         <figure class="logo flex items-center justify-start lg:pb-2">
             <img class="w-8 lg:w-10 transition-s-p" src="{{ asset($logo['image']) }}" alt="{{ $logo['alt'] }}">

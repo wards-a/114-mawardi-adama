@@ -4,20 +4,22 @@
 
 
 @layer components {
+    /* Size and position transition when changing*/
     .transition-s-p {
         transition-property: width, height, font-size, top, left, right, bottom;
         transition-duration: 0.7s;
         transition-timing-function: ease-in-out;
     }
 
+    /* Default theme for menu text */
     .text-nav-header {
-        @apply text-xs font-semibold opacity-85 hover:text-sky-600 lg:text-sm;
+        @apply text-xs font-semibold opacity-85 hover:text-sky-700 lg:text-sm;
     }
 }
 
-/* Navbar */
+/* ========== Navbar ========== */
 .menu-active {
-    @apply text-sky-600 opacity-100;
+    @apply text-sky-700 opacity-100;
 }
 
 .navbar.shrink {
@@ -51,3 +53,8 @@
 /* .navbar.shrink #mobile-nav #mobile-menu {
     @apply top-12;
 } */
+
+/* ========== Form Style Focused ========== */
+.focused {
+    @apply -top-3 text-xs;
+}

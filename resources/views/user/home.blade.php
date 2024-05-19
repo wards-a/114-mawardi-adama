@@ -14,7 +14,7 @@
 @include('user.partials.pages.home.carousel')
 
 {{-- Highlight Menu --}}
-@include('user.partials.pages.home.highlight-menu')
+@include('user.partials.pages.home.menu_highlight')
 
 {{-- main content --}}
 @include('user.partials.pages.home.content')

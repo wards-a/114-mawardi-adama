@@ -18,28 +18,28 @@
                 <li class="basis-1/3">
                     <div id="menu-information" class="flex flex-col gap-y-2 text-center text-sm text-slate-600 lg:text-left lg:text-slate-800">
                         <h3 class="mb-2 text-sm font-semibold text-sky-700">Hubungi Kami</h3>
-                        <p>Info pemesanan dan konsultasi kebutuhan silahkan hubungi kami:</p>
+                        <p>Info pemesanan dan konsultasi kebutuhan silahkan hubungi:</p>
                         <div class="flex items-center justify-center lg:justify-start">
                             <span class="flex items-center justify-center mb-px bg-green-500 w-7 h-7 rounded-full lg:w-6 lg:h-6">
-                                <svg class="w-5 h-5 text-white px-px lg:w-4 lg:h-4" aria-hidden="true" width="24" height="24" fill="none" viewBox="0 0 24 24">
+                                <x-svg class="w-5 h-5 text-white px-px lg:w-4 lg:h-4">
                                     <use xlink:href="icons.svg#icon-whatsapp"></use>
-                                </svg>
+                                </x-svg>
                             </span>
                             <p class="pl-2">Kevin: 0859 1067 87638</p>
                         </div>
                         <div class="flex items-center justify-center lg:justify-start">
                             <span class="flex items-center justify-center mb-px bg-green-500 w-7 h-7 rounded-full lg:w-6 lg:h-6">
-                                <svg class="w-5 h-5 text-white px-px lg:w-4 lg:h-4" aria-hidden="true" width="24" height="24" fill="none" viewBox="0 0 24 24">
+                                <x-svg class="w-5 h-5 text-white px-px lg:w-4 lg:h-4">
                                     <use xlink:href="icons.svg#icon-whatsapp"></use>
-                                </svg>
+                                </x-svg>
                             </span>
                             <p class="pl-2">Eksa: 0821 2284 8815</p>
                         </div>
                         <div class="flex items-center justify-center lg:justify-start">
                             <span class="flex items-center justify-center mb-px bg-blue-700 w-7 h-7 rounded lg:w-6 lg:h-6">
-                                <svg class="w-5 h-5 text-white px-px lg:w-4 lg:h-4" aria-hidden="true" width="24" height="24" fill="none" viewBox="0 0 24 24">
+                                <x-svg class="w-5 h-5 text-white px-px lg:w-4 lg:h-4">
                                     <use xlink:href="icons.svg#icon-envelope"></use>    
-                                </svg>
+                                </x-svg>
                             </span>
                             <p class="pl-2">customgoodiebag@gmail.com</p>
                         </div>
@@ -61,28 +61,28 @@
             <div id="separator" class="w-full h-1 my-7 border-t border-gray-200 lg:hidden"></div>
 
             <div id="menu-information" class="flex flex-col gap-y-2 mb-8 text-center text-sm text-slate-600 lg:text-left lg:text-slate-800">
-                <p>Info pemesanan dan konsultasi kebutuhan silahkan hubungi kami:</p>
+                <p>Info pemesanan dan konsultasi kebutuhan silahkan hubungi:</p>
                 <div class="flex items-center justify-center lg:justify-start">
                     <span class="flex items-center justify-center mb-px bg-green-500 w-7 h-7 rounded-full lg:w-6 lg:h-6">
-                        <svg class="w-5 h-5 text-white px-px lg:w-4 lg:h-4" aria-hidden="true" width="24" height="24" fill="none" viewBox="0 0 24 24">
+                        <x-svg class="w-5 h-5 text-white px-px lg:w-4 lg:h-4">
                             <use xlink:href="icons.svg#icon-whatsapp"></use>
-                        </svg>
+                        </x-svg>
                     </span>
                     <p class="pl-2">Kevin: 0859 1067 87638</p>
                 </div>
                 <div class="flex items-center justify-center lg:justify-start">
                     <span class="flex items-center justify-center mb-px bg-green-500 w-7 h-7 rounded-full lg:w-6 lg:h-6">
-                        <svg class="w-5 h-5 text-white px-px lg:w-4 lg:h-4" aria-hidden="true" width="24" height="24" fill="none" viewBox="0 0 24 24">
+                        <x-svg class="w-5 h-5 text-white px-px lg:w-4 lg:h-4">
                             <use xlink:href="icons.svg#icon-whatsapp"></use>
-                        </svg>
+                        </x-svg>
                     </span>
                     <p class="pl-2">Eksa: 0821 2284 8815</p>
                 </div>
                 <div class="flex items-center justify-center lg:justify-start">
                     <span class="flex items-center justify-center mb-px bg-blue-700 w-7 h-7 rounded lg:w-6 lg:h-6">
-                        <svg class="w-5 h-5 text-white px-px lg:w-4 lg:h-4" aria-hidden="true" width="24" height="24" fill="none" viewBox="0 0 24 24">
+                        <x-svg class="w-5 h-5 text-white px-px lg:w-4 lg:h-4">
                             <use xlink:href="icons.svg#icon-envelope"></use>    
-                        </svg>
+                        </x-svg>
                     </span>
                     <p class="pl-2">customgoodiebag@gmail.com</p>
                 </div>
@@ -95,7 +95,7 @@
             {{-- Logo and company name --}}
             <figure class="logo flex items-center justify-start my-5 lg:my-0">
                 <img class="w-10 transition-s-p" src="{{ asset($logo['image']) }}" alt="{{ $logo['alt'] }}">
-                <figcaption class="text-md font-semibold self-center pt-3.5 transition-s-p lg:pt-3 lg:text-xl">{{ $logo['caption'] }}</figcaption>
+                <figcaption class="text-md font-semibold self-center pt-3.5 transition-s-p lg:pt-3 lg:text-xl">{{ $logo['name'] }}</figcaption>
             </figure>
             <p class="mb-5 px-5 text-center text-sm text-slate-600 lg:mb-0 lg:basis-7/12">PT. Goodiebag Custom Indonesia menyediakan berbagai macam jenis tas yang dapat di kustomisasi sesuai keinginan dan kebutuhan Anda.</p>
             <div id="social">
@@ -103,23 +103,23 @@
                     <li class="inline-block">
                         {{-- components --}}
                         <a href="https://www.facebook.com/profile.php?id=100042176985715" class="flex items-center justify-center bg-blue-800 w-6 h-6 rounded">
-                            <svg class="w-5 h-5 text-white" width="24" height="24" fill="currentColor" viewBox="0 0 24 24">
+                            <x-svg class="w-5 h-5 text-white" width="24" height="24" fill="currentColor" viewBox="0 0 24 24">
                                 <use xlink:href="icons.svg#icon-facebook"></use>
-                            </svg>                                                                    
+                            </x-svg>                                                                    
                         </a>
                     </li>
                     <li class="inline-block">
                         <a href="https://www.instagram.com/goodiebag.custom/" class="flex items-center justify-center bg-rose-600 w-6 h-6 rounded">
-                            <svg class="w-5 h-5 text-white" width="24" height="24" fill="none" viewBox="0 0 24 24">
+                            <x-svg class="w-5 h-5 text-white" width="24" height="24" fill="none" viewBox="0 0 24 24">
                                 <use xlink:href="icons.svg#icon-instagram"></use>
-                            </svg>
+                            </x-svg>
                         </a>
                     </li>
                     <li class="inline-block">
                         <a href="https://www.youtube.com/channel/UCYpETqzVwjDAo_KAT7mLg9g" class="flex items-center justify-center bg-red-700 w-6 h-6 rounded">
-                            <svg class="w-5 h-5 text-white" width="24" height="24" fill="currentColor" viewBox="0 0 24 24">
+                            <x-svg class="w-5 h-5 text-white" width="24" height="24" fill="currentColor" viewBox="0 0 24 24">
                                 <use xlink:href="icons.svg#icon-youtube"></use>
-                            </svg>         
+                            </x-svg>         
                         </a>
                     </li>
                 </ul>
@@ -132,7 +132,3 @@
         </div>
     </section>
 </footer>
-
-@push('jquery')
-    <script src="https://code.jquery.com/jquery-2.2.4.min.js" integrity="sha256-BbhdlvQf/xTY9gja0Dq3HiwQF8LaCRTXxZKRutelT44=" crossorigin="anonymous"></script>
-@endpush

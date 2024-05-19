@@ -6,7 +6,7 @@
 @section('title', 'Kontak Kami')
 
 @section('content')
-    @include('user.partials.pages.contact.content')
+    @include('user.partials.pages.contact.contact_form')
 @endsection
 
 @push('scripts')

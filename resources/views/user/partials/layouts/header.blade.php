@@ -1,9 +1,15 @@
-<header class="navbar fixed top-0 w-full z-50 bg-white shadow-md h-12 transition-s-p lg:h-16">
+@if (!isset($menu))
+    @php
+        $menu = [];
+    @endphp
+@endif
+
+<header class="{{ !$menu ? 'static' : 'fixed' }} navbar top-0 w-full z-30 bg-white shadow-md h-14 transition-s-p lg:h-16">
     <div class="flex items-center justify-between w-11/12 h-full mx-auto relative">
         {{-- Logo and company name --}}
         <figure class="logo flex items-center justify-start lg:pb-2">
             <img class="w-8 lg:w-10 transition-s-p" src="{{ asset($logo['image']) }}" alt="{{ $logo['alt'] }}">
-            <figcaption class="text-base font-semibold self-center pt-2.5 transition-s-p lg:pt-3 lg:text-xl">{{ $logo['caption'] }}</figcaption>
+            <figcaption class="text-base font-semibold self-center pt-2.5 transition-s-p lg:pt-3 lg:text-xl">{{ $logo['name'] }}</figcaption>
         </figure>
         
         {{-- Navbar --}}
@@ -53,7 +59,7 @@
         </div>
 
         {{-- Mobile nav --}}
-        <div id="mobile-nav" class="flex items-center order-first lg:hidden">
+        <div id="mobile-nav" class="{{ !$menu ? 'invisible' : '' }} flex items-center order-first lg:hidden">
             {{-- Hamburger menu --}}
             <button type="button" id="hamburger" class="text-gray-700">
                 <span id="hamburger-icon">
@@ -69,7 +75,7 @@
             </button>
 
             {{-- Mobile Menu --}}
-            <div id="mobile-menu" class="hidden absolute w-full left-0 top-12 border-t-2 border-t-blue-400 p-2 bg-white transition-s-p lg:hidden ">
+            <div id="mobile-menu" class="hidden absolute w-full left-0 top-12 border-t-2 border-t-blue-400 p-2 bg-white transition-s-p lg:hidden">
                 <ul>
                     @foreach ($menu as $item)
                         @if ($item['type'] === 'text')

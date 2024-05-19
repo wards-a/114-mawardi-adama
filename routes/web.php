@@ -11,7 +11,7 @@ Route::prefix('/')->name('user.')->group( function(){
     Route::get('beranda', function () {
         $logo = [
             "image" => "logo.png",
-            "caption" => "Goodiebagcustom",
+            "name" => "Goodiebagcustom",
             "alt" => "goodiebagcustom"
         ];
 
@@ -73,7 +73,7 @@ Route::prefix('/')->name('user.')->group( function(){
     Route::get('produk', function () {
         $logo = [
             "image" => "logo.png",
-            "caption" => "Goodiebagcustom",
+            "name" => "Goodiebagcustom",
             "alt" => "goodiebagcustom"
         ];
 
@@ -135,7 +135,7 @@ Route::prefix('/')->name('user.')->group( function(){
     Route::get('tentang-kami', function () {
         $logo = [
             "image" => "logo.png",
-            "caption" => "Goodiebagcustom",
+            "name" => "Goodiebagcustom",
             "alt" => "goodiebagcustom"
         ];
 
@@ -197,7 +197,7 @@ Route::prefix('/')->name('user.')->group( function(){
     Route::get('kontak-kami', function () {
         $logo = [
             "image" => "logo.png",
-            "caption" => "Goodiebagcustom",
+            "name" => "Goodiebagcustom",
             "alt" => "goodiebagcustom"
         ];
 
@@ -259,7 +259,7 @@ Route::prefix('/')->name('user.')->group( function(){
     Route::get('cara-pemesanan', function () {
         $logo = [
             "image" => "logo.png",
-            "caption" => "Goodiebagcustom",
+            "name" => "Goodiebagcustom",
             "alt" => "goodiebagcustom"
         ];
 
@@ -321,7 +321,7 @@ Route::prefix('/')->name('user.')->group( function(){
     Route::get('buat-pesanan', function () {
         $logo = [
             "image" => "logo.png",
-            "caption" => "Goodiebagcustom",
+            "name" => "Goodiebagcustom",
             "alt" => "goodiebagcustom"
         ];
 
@@ -380,72 +380,10 @@ Route::prefix('/')->name('user.')->group( function(){
         return view('user.order', compact('logo', 'menu'));
     })->name('order'); 
 
-    Route::get('masuk', function () {
-        $logo = [
-            "image" => "logo.png",
-            "caption" => "Goodiebagcustom",
-            "alt" => "goodiebagcustom"
-        ];
-
-        $menu = [
-            [
-                "name" => "Beranda",
-                "path" => "beranda",
-                "type" => "text"
-            ],
-            [
-                "name" => "Produk",
-                "path" => "#",
-                "type" => "text",
-                "category" => [
-                    [
-                        "name" => "Goodiebag",
-                        "path" => "goodiebag",
-                        "type" => "text"
-                    ],
-                    [
-                        "name" => "Tas Ransel",
-                        "path" => "produk/tas-ransel",
-                        "type" => "text"
-                    ],
-                    [
-                        "name" => "Pouch",
-                        "path" => "produk/pouch",
-                        "type" => "text"
-                    ]
-                ],
-            ],
-            [
-                "name" => "Tentang Kami",
-                "path" => "tentang-kami",
-                "type" => "text"
-            ],
-            [
-                "name" => "Kontak Kami",
-                "path" => "kontak-kami",
-                "type" => "text"
-            ],
-            [
-                "name" => "Masuk",
-                "path" => "masuk",
-                "type" => "text",
-                "src" => "icons.svg#icon-user-circle"
-            ],
-            [
-                "name" => "Buat Pesanan",
-                "path" => "buat-pesanan",
-                "type" => "icon",
-                "src" => "icons.svg#icon-shopping-bag"
-            ],
-        ];
-
-        return view('user.profile', compact('logo', 'menu'));
-    })->name('profile');
-
     Route::get('produk-rekomendasi', function() {
         $logo = [
             "image" => "logo.png",
-            "caption" => "Goodiebagcustom",
+            "name" => "Goodiebagcustom",
             "alt" => "goodiebagcustom"
         ];
 
@@ -503,4 +441,34 @@ Route::prefix('/')->name('user.')->group( function(){
 
         return view('user.product', compact('logo', 'menu'));
     })->name('recommended');
+
+    Route::get('masuk', function () {
+        $logo = [
+            "image" => "logo.png",
+            "name" => "Goodiebagcustom",
+            "alt" => "goodiebagcustom"
+        ];
+
+        return view('user.authentication', compact('logo'));
+    })->name('login');
+
+    Route::get('daftar', function () {
+        $logo = [
+            "image" => "logo.png",
+            "name" => "Goodiebagcustom",
+            "alt" => "goodiebagcustom"
+        ];
+
+        return view('user.authentication', compact('logo'));
+    })->name('register');
+
+    Route::get('lupa-kata-sandi', function () {
+        $logo = [
+            "image" => "logo.png",
+            "name" => "Goodiebagcustom",
+            "alt" => "goodiebagcustom"
+        ];
+
+        return view('user.authentication', compact('logo'));
+    })->name('forgot_password');
 });

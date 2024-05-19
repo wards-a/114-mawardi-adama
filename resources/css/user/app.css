@@ -22,10 +22,6 @@
     @apply text-sky-700 opacity-100;
 }
 
-.navbar.shrink {
-    @apply h-12;
-}
-
 .navbar.shrink .logo img {
     @apply w-8;
 }
@@ -57,4 +53,13 @@
 /* ========== Form Style Focused ========== */
 .focused {
     @apply -top-3 text-xs;
+}
+
+
+/* ========== Media Query ========== */
+@media screen and (min-width: 1024px) {
+    /* Navbar shrink */
+    .navbar.shrink {
+        @apply h-12;
+    }
 }

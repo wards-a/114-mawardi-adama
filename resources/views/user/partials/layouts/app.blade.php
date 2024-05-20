@@ -13,7 +13,7 @@
 <body>
     @include('user.partials.layouts.header')
 
-    <main class="relative top-20 m-0 p-0 lg:top-24">
+    <main class="w-full relative top-20 m-0 p-0 lg:top-24">
         @yield('content')
     </main>
 

@@ -471,4 +471,64 @@ Route::prefix('/')->name('user.')->group( function(){
 
         return view('user.authentication', compact('logo'));
     })->name('forgot_password');
+
+    Route::get('detail-produk', function() {
+        $logo = [
+            "image" => "logo.png",
+            "name" => "Goodiebagcustom",
+            "alt" => "goodiebagcustom"
+        ];
+        $menu = [
+            [
+                "name" => "Beranda",
+                "path" => "beranda",
+                "type" => "text"
+            ],
+            [
+                "name" => "Produk",
+                "path" => "#",
+                "type" => "text",
+                "category" => [
+                    [
+                        "name" => "Goodiebag",
+                        "path" => "goodiebag",
+                        "type" => "text"
+                    ],
+                    [
+                        "name" => "Tas Ransel",
+                        "path" => "produk/tas-ransel",
+                        "type" => "text"
+                    ],
+                    [
+                        "name" => "Pouch",
+                        "path" => "produk/pouch",
+                        "type" => "text"
+                    ]
+                ],
+            ],
+            [
+                "name" => "Tentang Kami",
+                "path" => "tentang-kami",
+                "type" => "text"
+            ],
+            [
+                "name" => "Kontak Kami",
+                "path" => "kontak-kami",
+                "type" => "text"
+            ],
+            [
+                "name" => "Masuk",
+                "path" => "masuk",
+                "type" => "text",
+                "src" => "icons.svg#icon-user-circle"
+            ],
+            [
+                "name" => "Buat Pesanan",
+                "path" => "buat-pesanan",
+                "type" => "icon",
+                "src" => "icons.svg#icon-shopping-bag"
+            ],
+        ];
+        return view('user.product', compact('logo', 'menu'));
+    })->name('product_detail');
 });

@@ -2,6 +2,9 @@
 @tailwind components;
 @tailwind utilities;
 
+* {
+    @apply box-border m-0 p-0;
+}
 
 @layer components {
     /* Size and position transition when changing*/

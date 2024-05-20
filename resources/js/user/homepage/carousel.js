@@ -10,7 +10,7 @@ $(document).ready(function () {
         mobileFirst: true,
     });
 
-    // product banner
+    // product
     $('.product-carousel').slick({
         mobileFirst: true,
         infinite: false,

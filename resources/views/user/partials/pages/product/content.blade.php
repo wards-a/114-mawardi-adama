@@ -11,8 +11,8 @@
                     <img class="mx-auto h-44" src="{{ asset('product-img/recommended/goodiebag-blacucream.jpg') }}" alt="">
                     <div class="flex flex-col p-2.5">
                         <p class="text-sm overflow-hidden text-ellipsis">Blacu Cream</p>
-                        <div>
-                            <p class="text-sky-800 font-semibold mb-1">Rp 15.000</p>
+                        <div class="product_price">
+                            <p class="text-sky-700 font-semibold mb-1">Rp 15.000</p>
                             <p class="text-xs text-gray-500 line-through italic">Rp 17.000</p>
                         </div>
                     </div>
@@ -22,7 +22,7 @@
                     <div class="flex flex-col p-2.5">
                         <p class="text-sm overflow-hidden text-ellipsis">Blacu Putih Polyster</p>
                         <div>
-                            <p class="text-sky-800 font-semibold mb-1">Rp 15.000</p>
+                            <p class="text-sky-700 font-semibold mb-1">Rp 15.000</p>
                             <p class="text-xs text-gray-500 line-through italic">Rp 17.000</p>
                         </div>
                     </div>
@@ -32,7 +32,7 @@
                     <div class="flex flex-col p-2.5">
                         <p class="text-sm overflow-hidden text-ellipsis">Dinier Abu</p>
                         <div>
-                            <p class="text-sky-800 font-semibold mb-1">Rp 15.000</p>
+                            <p class="text-sky-700 font-semibold mb-1">Rp 15.000</p>
                             <p class="text-xs text-gray-500 line-through italic">Rp 17.000</p>
                         </div>
                     </div>
@@ -42,7 +42,7 @@
                     <div class="flex flex-col p-2.5">
                         <p class="text-sm overflow-hidden text-ellipsis">Dinier Biru</p>
                         <div>
-                            <p class="text-sky-800 font-semibold mb-1">Rp 15.000</p>
+                            <p class="text-sky-700 font-semibold mb-1">Rp 15.000</p>
                             <p class="text-xs text-gray-500 line-through italic">Rp 17.000</p>
                         </div>
                     </div>
@@ -52,7 +52,7 @@
                     <div class="flex flex-col p-2.5">
                         <p class="text-sm overflow-hidden text-ellipsis">Dinier Biru 2</p>
                         <div>
-                            <p class="text-sky-800 font-semibold mb-1">Rp 15.000</p>
+                            <p class="text-sky-700 font-semibold mb-1">Rp 15.000</p>
                             <p class="text-xs text-gray-500 line-through italic">Rp 17.000</p>
                         </div>
                     </div>
@@ -62,7 +62,7 @@
                     <div class="flex flex-col p-2.5">
                         <p class="text-sm overflow-hidden text-ellipsis">Dinier Hijau</p>
                         <div>
-                            <p class="text-sky-800 font-semibold mb-1">Rp 15.000</p>
+                            <p class="text-sky-700 font-semibold mb-1">Rp 15.000</p>
                             <p class="text-xs text-gray-500 line-through italic">Rp 17.000</p>
                         </div>
                     </div>
@@ -72,7 +72,7 @@
                     <div class="flex flex-col p-2.5">
                         <p class="text-sm overflow-hidden text-ellipsis">Spunbond HDL Biru Muda</p>
                         <div>
-                            <p class="text-sky-800 font-semibold mb-1">Rp 15.000</p>
+                            <p class="text-sky-700 font-semibold mb-1">Rp 15.000</p>
                             <p class="text-xs text-gray-500 line-through italic">Rp 17.000</p>
                         </div>
                     </div>
@@ -82,7 +82,7 @@
                     <div class="flex flex-col p-2.5">
                         <p class="text-sm overflow-hidden text-ellipsis">Spunbond HDL Box Merah</p>
                         <div>
-                            <p class="text-sky-800 font-semibold mb-1">Rp 15.000</p>
+                            <p class="text-sky-700 font-semibold mb-1">Rp 15.000</p>
                             <p class="text-xs text-gray-500 line-through italic">Rp 17.000</p>
                         </div>
                     </div>
@@ -92,7 +92,7 @@
                     <div class="flex flex-col p-2.5">
                         <p class="text-sm overflow-hidden text-ellipsis">Spunbond Oval Hitam</p>
                         <div>
-                            <p class="text-sky-800 font-semibold mb-1">Rp 15.000</p>
+                            <p class="text-sky-700 font-semibold mb-1">Rp 15.000</p>
                             <p class="text-xs text-gray-500 line-through italic">Rp 17.000</p>
                         </div>
                     </div>
@@ -102,7 +102,7 @@
                     <div class="flex flex-col p-2.5">
                         <p class="text-sm overflow-hidden text-ellipsis">Blacu Putih Polyster</p>
                         <div>
-                            <p class="text-sky-800 font-semibold mb-1">Rp 7.000</p>
+                            <p class="text-sky-700 font-semibold mb-1">Rp 7.000</p>
                             <p class="text-xs text-gray-500 line-through italic"></p>
                         </div>
                     </div>

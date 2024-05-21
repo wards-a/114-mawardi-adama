@@ -6,6 +6,17 @@
     @apply box-border m-0 p-0;
 }
 
+input::-webkit-outer-spin-button,
+input::-webkit-inner-spin-button {
+  -webkit-appearance: none;
+  margin: 0;
+}
+
+/* Firefox */
+input[type=number] {
+  -moz-appearance: textfield;
+}
+
 @layer components {
     /* Size and position transition when changing*/
     .transition-s-p {
@@ -58,6 +69,11 @@
     @apply -top-3 text-xs;
 }
 
+/* ========== Product Detail ========== */
+/* size selected */
+#product_size_list .btnSizeActive {
+    @apply ring ring-sky-300 bg-sky-500;
+}
 
 /* ========== Media Query ========== */
 @media screen and (min-width: 1024px) {

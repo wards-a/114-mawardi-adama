@@ -16,6 +16,5 @@
 
 @push('scripts')
     @vite('resources/js/slick/slick.min.js')
-    @vite('resources/js/user/product_detail/images_carousel.js')
-    @vite('resources/js/user/product_detail/description.js')
+    @vite('resources/js/user/product/product_detail.js')
 @endpush

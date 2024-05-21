@@ -50,7 +50,7 @@
             @foreach ($menu as $item)
                 @if ($item['type'] === 'icon' && $item['path'] === 'buat-pesanan')
                 <a href="{{ $item['path'] }}" class="text-nav-header transition-s-p transition-colors duration-300 ease-in-out" aria-expanded="true" aria-haspopup="true">
-                    <x-svg class="w-6 h-6 text-nav-header transition-s-p">
+                    <x-svg class="w-6 h-6 text-nav-header transition-s-p" fill="none">
                         <use xlink:href="{{ $item['src'] }}"></use>
                     </x-svg>
                 </a>
@@ -85,7 +85,7 @@
                                     {{ $item['name'] }}
                                     {{-- Check if it has a submenu then add an icon--}}
                                     @if (isset($item['category']))
-                                    <x-svg class="w-3.5 h-3.5 flex-none opacity-90 transition-s-p">
+                                    <x-svg class="w-3.5 h-3.5 flex-none opacity-90 transition-s-p" fill="none">
                                         <use xlink:href="icons.svg#icon-angle-right" />
                                     </x-svg>
                                     @endif

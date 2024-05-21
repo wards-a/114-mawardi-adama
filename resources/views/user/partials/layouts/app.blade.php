@@ -18,7 +18,7 @@
     </main>
 
     @if ((!in_array(Route::currentRouteName(), ['user.login', 'user.register', 'user.forgot_password'])))
-    <dialog id="dialogFormLogin" class="w-96 fixed z-50 top-24 pt-10 backdrop-brightness-50" aria-labelledby="formDialogLogin" aria-hidden="true">
+    <dialog id="dialogFormLogin" class="w-96 fixed z-50 top-24 left-1/3 pt-10 backdrop-brightness-50" aria-labelledby="formDialogLogin" aria-hidden="true">
         <button id="closeDialog" class="absolute right-1.5 top-1.5 text-slate-500 hover:text-slate-700">
             <x-svg class="w-6 h-6">
                 <use xlink:href="icons.svg#icon-close-circle">

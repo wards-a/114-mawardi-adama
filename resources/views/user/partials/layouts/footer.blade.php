@@ -21,7 +21,7 @@
                         <p>Info pemesanan dan konsultasi kebutuhan silahkan hubungi:</p>
                         <div class="flex items-center justify-center lg:justify-start">
                             <span class="flex items-center justify-center mb-px bg-green-500 w-7 h-7 rounded-full lg:w-6 lg:h-6">
-                                <x-svg class="w-5 h-5 text-white px-px lg:w-4 lg:h-4">
+                                <x-svg class="w-5 h-5 text-white px-px lg:w-4 lg:h-4" fill="none">
                                     <use xlink:href="icons.svg#icon-whatsapp"></use>
                                 </x-svg>
                             </span>
@@ -29,7 +29,7 @@
                         </div>
                         <div class="flex items-center justify-center lg:justify-start">
                             <span class="flex items-center justify-center mb-px bg-green-500 w-7 h-7 rounded-full lg:w-6 lg:h-6">
-                                <x-svg class="w-5 h-5 text-white px-px lg:w-4 lg:h-4">
+                                <x-svg class="w-5 h-5 text-white px-px lg:w-4 lg:h-4" fill="none">
                                     <use xlink:href="icons.svg#icon-whatsapp"></use>
                                 </x-svg>
                             </span>
@@ -37,7 +37,7 @@
                         </div>
                         <div class="flex items-center justify-center lg:justify-start">
                             <span class="flex items-center justify-center mb-px bg-blue-700 w-7 h-7 rounded lg:w-6 lg:h-6">
-                                <x-svg class="w-5 h-5 text-white px-px lg:w-4 lg:h-4">
+                                <x-svg class="w-5 h-5 text-white px-px lg:w-4 lg:h-4" fill="none">
                                     <use xlink:href="icons.svg#icon-envelope"></use>    
                                 </x-svg>
                             </span>
@@ -64,7 +64,7 @@
                 <p>Info pemesanan dan konsultasi kebutuhan silahkan hubungi:</p>
                 <div class="flex items-center justify-center lg:justify-start">
                     <span class="flex items-center justify-center mb-px bg-green-500 w-7 h-7 rounded-full lg:w-6 lg:h-6">
-                        <x-svg class="w-5 h-5 text-white px-px lg:w-4 lg:h-4">
+                        <x-svg class="w-5 h-5 text-white px-px lg:w-4 lg:h-4" fill="none">
                             <use xlink:href="icons.svg#icon-whatsapp"></use>
                         </x-svg>
                     </span>
@@ -72,7 +72,7 @@
                 </div>
                 <div class="flex items-center justify-center lg:justify-start">
                     <span class="flex items-center justify-center mb-px bg-green-500 w-7 h-7 rounded-full lg:w-6 lg:h-6">
-                        <x-svg class="w-5 h-5 text-white px-px lg:w-4 lg:h-4">
+                        <x-svg class="w-5 h-5 text-white px-px lg:w-4 lg:h-4" fill="none">
                             <use xlink:href="icons.svg#icon-whatsapp"></use>
                         </x-svg>
                     </span>
@@ -80,7 +80,7 @@
                 </div>
                 <div class="flex items-center justify-center lg:justify-start">
                     <span class="flex items-center justify-center mb-px bg-blue-700 w-7 h-7 rounded lg:w-6 lg:h-6">
-                        <x-svg class="w-5 h-5 text-white px-px lg:w-4 lg:h-4">
+                        <x-svg class="w-5 h-5 text-white px-px lg:w-4 lg:h-4" fill="none">
                             <use xlink:href="icons.svg#icon-envelope"></use>    
                         </x-svg>
                     </span>
@@ -103,21 +103,21 @@
                     <li class="inline-block">
                         {{-- components --}}
                         <a href="https://www.facebook.com/profile.php?id=100042176985715" class="flex items-center justify-center bg-blue-800 w-6 h-6 rounded">
-                            <x-svg class="w-5 h-5 text-white" width="24" height="24" fill="currentColor" viewBox="0 0 24 24">
+                            <x-svg class="w-5 h-5 text-white" fill="currentColor">
                                 <use xlink:href="icons.svg#icon-facebook"></use>
                             </x-svg>                                                                    
                         </a>
                     </li>
                     <li class="inline-block">
                         <a href="https://www.instagram.com/goodiebag.custom/" class="flex items-center justify-center bg-rose-600 w-6 h-6 rounded">
-                            <x-svg class="w-5 h-5 text-white" width="24" height="24" fill="none" viewBox="0 0 24 24">
+                            <x-svg class="w-5 h-5 text-white" fill="none">
                                 <use xlink:href="icons.svg#icon-instagram"></use>
                             </x-svg>
                         </a>
                     </li>
                     <li class="inline-block">
                         <a href="https://www.youtube.com/channel/UCYpETqzVwjDAo_KAT7mLg9g" class="flex items-center justify-center bg-red-700 w-6 h-6 rounded">
-                            <x-svg class="w-5 h-5 text-white" width="24" height="24" fill="currentColor" viewBox="0 0 24 24">
+                            <x-svg class="w-5 h-5 text-white" fill="currentColor">
                                 <use xlink:href="icons.svg#icon-youtube"></use>
                             </x-svg>         
                         </a>

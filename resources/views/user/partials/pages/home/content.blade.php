@@ -60,6 +60,7 @@
                         <p class="text-sm line-clamp-2">Dinier Biru 2</p>
                         <div>
                             <p class="text-sky-700 font-semibold mb-1">Rp 15.000</p>
+
                             <p class="text-xs text-gray-500 line-through italic">Rp 17.000</p>
                         </div>
                     </div>

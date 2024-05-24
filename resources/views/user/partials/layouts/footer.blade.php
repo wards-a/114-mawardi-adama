@@ -131,4 +131,4 @@
             <p class="text-xs text-center text-slate-600 font-semibold">&#169; 2024 PT. Goodiebag Custom Indonesia</p>
         </div>
     </section>
-</footer>
+</footer

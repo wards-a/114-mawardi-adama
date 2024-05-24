@@ -1,8 +1,8 @@
 <section id="highlight-product">
     <div class="w-full max-w-6xl mb-6 pb-2.5 border-b lg:mb-8 lg:mx-auto">
-        <div class="flex items-center justify-between w-full mb-3.5 lg:mb-2">
+        <div class="flex items-center justify-between w-full mb-3.5 lg:mb-5">
             <h2 class="text-base font-medium ml-2.5 lg:text-2xl">Rekomendasi Untukmu</h2>
-            <a href="{{ route('user.recommended') }}" class="mr-2.5 text-sm font-medium lg:font-semibold text-sky-700">Lihat Semua</a>
+            <a href="{{ route('product.tag', 'recommended') }}" class="mr-2.5 text-sm font-medium lg:font-semibold text-sky-700">Lihat Semua</a>
         </div>
         <div class="product-carousel mb-5 pl-1.5 lg:pl-6">
             <div class="slick-slide w-full h-80 max-w-44 mx-1 pl-2.5">

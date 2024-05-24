@@ -134,15 +134,24 @@ const calculationTotalPrice = () => {
     const priceInput = document.getElementById('product_price');
     const quantityInput = document.getElementById('product_quantity');
 
+    const calculate = () => {
+        const totalPrice = addThousandSeparator(parseInt(priceInput.value) * parseInt(quantityInput.value));
+
+        if (totalPrice === "NaN") {
+            totalPriceText.textContent = "Rp 0";
+            return;
+        }
+
+        totalPriceText.textContent = totalPrice ? "Rp "+totalPrice : "Rp 0";    
+    }
+
     // console.log(priceInput.value);
     priceInput.addEventListener('change', () => {
-        const totalPrice = addThousandSeparator(parseInt(priceInput.value) * parseInt(quantityInput.value));
-        totalPriceText.textContent = totalPrice ? "Rp "+totalPrice : "Rp 0";
+        calculate();
     });
 
     quantityInput.addEventListener('change', () => {
-        const totalPrice = addThousandSeparator(parseInt(priceInput.value) * parseInt(quantityInput.value));
-        totalPriceText.textContent = totalPrice ? "Rp "+totalPrice : "Rp 0";
+        calculate();
     });
 }
 

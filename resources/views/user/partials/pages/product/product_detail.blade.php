@@ -113,7 +113,7 @@
         <div id="shop-option" class="w-full z-20 fixed bottom-0 left-0 min-h-min bg-white drop-shadow-lg rounded lg:sticky lg:w-fit lg:max-h-60 lg:basis-1/4 lg:top-20 lg:mb-9">
             <div id="shrink-quantity-section" class="w-full bg-sky-100 py-px text-center text-slate-700 lg:hidden">
                 <x-svg class="w-5 h-5 inline-block" fill="none">
-                    <use xlink:href="icons.svg#icon-angle-down" />
+                    <use xlink:href="/icons.svg#icon-angle-down" />
                 </x-svg>
             </div>
             <div id="quantity-section" class="px-5 space-y-3 mb-3 lg:space-y-5 lg:mb-5">
@@ -128,13 +128,13 @@
                             <fieldset class="flex justify-between">
                                 <button id="btn-subtract-quantity" type="button" class="text-slate-500" disabled>
                                     <x-svg class="w-4 h-4 sm:w-5 sm:h-5" fill="currentColor">
-                                        <use xlink:href="icons.svg#icon-circle-minus" />
+                                        <use xlink:href="/icons.svg#icon-circle-minus" />
                                     </x-svg>
                                 </button>
-                                <input id="product_quantity" type="number" class="w-20 font-bold text-center text-slate-700 focus:outline-none lg:w-full" name="quantity" value="1">
+                                <input id="product_quantity" type="number" class="w-20 font-bold text-center text-slate-700 border-0 focus:outline-none lg:w-full" name="quantity" value="1">
                                 <button id="btn-add-quantity" type="button" class="text-slate-700">
                                     <x-svg class="w-4 h-4 sm:w-5 sm:h-5" fill="currentColor">
-                                        <use xlink:href="icons.svg#icon-circle-plus" />
+                                        <use xlink:href="/icons.svg#icon-circle-plus" />
                                     </x-svg>
                                 </button>
                             </fieldset>
@@ -146,22 +146,23 @@
                     <p id="total_price" class="font-semibold text-sky-800">Rp 15.000</p>
                 </div>
             </div>
-            <div id="order-buttons-section" class="flex justify-between font-medium pb-2 px-5 lg:flex-wrap lg:gap-y-2 lg:relative">
-                <div id=whatsapp-chat class="group m basis-1/5 border-2 border-sky-600 py-1 rounded-3xl active:bg-sky-600 lg:py-0 lg:basis-[120px] xl:basis-[125px]">
-                    <a href="#" class="text-sky-600 group-active:text-white lg:px-2 xl:px-2.5">
-                        <x-svg class="w-6 h-6 mx-auto lg:mx-0 lg:inline-block" fill="none">
-                            <use xlink:href="icons.svg#icon-whatsapp" />
+            <div id="order-buttons-section" class="flex gap-x-2 font-medium pb-2 px-5 lg:flex-wrap lg:gap-y-2 lg:relative">
+                <div class="flex gap-x-2 basis-2/4 lg:basis-full">
+                    <div id=whatsapp-chat class="flex justify-center group basis-1/2 border-2 border-sky-600 py-1 rounded-3xl active:bg-sky-600 lg:py-0">
+                        <a href="#" class="text-sky-600 group-active:text-white xl:px-2.5">
+                            <x-svg class="w-6 h-6 mx-auto lg:mx-0 lg:inline-block" fill="none">
+                                <use xlink:href="/icons.svg#icon-whatsapp" />
+                            </x-svg>
+                            <span class="hidden text-sm font-semibold xl:inline-block">Konsultasi</span>
+                        </a>
+                    </div>
+                    <button type="button" class="group basis-1/2 text-sky-600 border-2 border-sky-600 py-1 rounded-3xl active:bg-sky-600 lg:py-0">
+                        <x-svg class="w-6 h-6 mx-auto group-active:text-white lg:inline-block lg:mx-0" fill="none">
+                            <use xlink:href="/icons.svg#icon-shopping-bag"></use>
                         </x-svg>
-                        <span class="hidden text-sm font-semibold lg:inline-block">Konsultasi</span>
-                    </a>
+                        <span class="hidden text-sm font-semibold group-active:text-white xl:inline-block">Tambah Tas</span>
+                    </button>
                 </div>
-                <button type="button" class="group basis-1/5 text-sky-600 border-2 border-sky-600 py-1 rounded-3xl active:bg-sky-600 lg:py-0 lg:basis-[120px] xl:basis-[125px]">
-                    <x-svg class="w-6 h-6 mx-auto group-active:text-white lg:inline-block lg:mx-0" fill="none">
-                        <use xlink:href="icons.svg#icon-shopping-bag"></use>
-                    </x-svg>
-                    <span class="hidden text-sm font-semibold group-active:text-white lg:inline-block">Keranjang</span>
-
-                </button>
                 <button type="button" class="text-sm basis-2/4 bg-sky-600 text-white py-1 rounded-full active:bg-sky-800 lg:basis-full lg:order-first">Minta Penawaran</button>
             </div>
         </div>

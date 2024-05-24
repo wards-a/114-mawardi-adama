@@ -3,12 +3,12 @@
 @push('css')
 @endpush
 
-@section('title', 'Cara Pemesanan')
+@section('title', 'Tas Belanja')
 
 @section('content')
-    <h1 class="ml-20">Buat Pesanan</h1>
-    <h1 class="ml-20">*Form Pesanan*</h1>
+@include('user.partials.pages.order.chart')
 @endsection
 
 @push('scripts')
+@vite('resources/js/user/order/cart.js')
 @endpush

@@ -10,11 +10,19 @@
 
 @section('content')
 
-@include('user.partials.pages.product.product_detail')
+    @if (Route::is('product.tag'))
+        @include('user.partials.pages.product.content')
+    @endif
+
+    @if (Route::is('product.show'))
+        @include('user.partials.pages.product.product_detail')
+        @push('scripts')
+            @vite('resources/js/user/product/product_detail.js')
+        @endpush
+    @endif
 
 @endsection
 
 @push('scripts')
     @vite('resources/js/slick/slick.min.js')
-    @vite('resources/js/user/product/product_detail.js')
 @endpush

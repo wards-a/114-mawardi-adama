@@ -23,7 +23,7 @@
         </div>
         <div class="mx-auto text-sm">
             <p class="inline-block text-slate-950">Sudah punya akun?</p>
-            <a href="{{ route('user.login') }}" class="underline text-sky-700 active:text-sky-900">Masuk</a>
+            <a href="{{ route('auth.sign-in') }}" class="underline text-sky-700 active:text-sky-900">Masuk</a>
         </div>
     </div>
 </section>

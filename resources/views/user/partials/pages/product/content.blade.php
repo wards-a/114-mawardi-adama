@@ -5,9 +5,9 @@
             <a href="#" class="text-sm text-slate-500 font-medium lg:hidden">1-10 dari 10 produk ditampilkan</a>
         </div>
         <div class="table w-full clear-both">
-            <div class="grid grid-cols-2 gap-4 mb-10 sm:grid-cols-4 md:grid-cols-5 lg:grid-cols-6">
+            <div class="grid grid-cols-2 gap-4 mb-10 sm:grid-cols-4 md:grid-cols-5 lg:grid-cols-6 xl:grid-cols-7">
                 {{-- card --}}
-                <a href="#" class="block h-72 shadow-lg rounded-lg">
+                <a href="/product/1" class="block h-72 shadow-lg rounded-lg">
                     <img class="mx-auto h-44" src="{{ asset('product-img/recommended/goodiebag-blacucream.jpg') }}" alt="">
                     <div class="flex flex-col p-2.5">
                         <p class="text-sm overflow-hidden text-ellipsis">Blacu Cream</p>

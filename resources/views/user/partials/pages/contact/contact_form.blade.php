@@ -28,7 +28,7 @@
             <div id="contact-order" class="space-y-3 md:pt-9">
                 <h2 class="text-sm text-slate-500">Atau untuk seputar produk dan pemesanan Anda bisa menghubungi kami melalui</h2>
                 <div class="flex justify-start gap-x-3">
-                    <x-svg class="w-7 h-7 text-sky-900">
+                    <x-svg class="w-7 h-7 text-sky-900" fill="none">
                         <use xlink:href="icons.svg#icon-whatsapp"></use>
                     </x-svg>
                     <div class="space-y-px">
@@ -41,7 +41,7 @@
                     </div>
                 </div>
                 <div class="flex justify-start gap-x-3">
-                    <x-svg class="w-7 h-7 text-sky-900">
+                    <x-svg class="w-7 h-7 text-sky-900" fill="none">
                         <use xlink:href="icons.svg#icon-envelope"></use>
                     </x-svg>
                     <div class="space-y-px">

@@ -4,13 +4,16 @@ export default {
     "./resources/**/*.blade.php",
     "./resources/**/*.js",
     "./resources/**/*.vue",
+    "./node_modules/flowbite/**/*.js",
   ],
   theme: {
     fontFamily: {
       sans: ['Open Sans', 'Arial', 'serif'],
     },
-    extend: { },
+    extend: {},
   },
-  plugins: [],
+  plugins: [
+    require('flowbite/plugin'),
+  ],
 }
 

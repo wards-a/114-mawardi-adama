@@ -118,3 +118,21 @@
     }
     /* ========== Banner Carousel ==========*/
 }
+
+/* ========== Product Detail Images ==========*/
+
+/* .product_detail_images .slick-next {
+    right: -1px !important;
+}
+
+.product_detail_images .slick-prev {
+    left: 0px !important;
+    z-index: 1 !important;
+}
+
+.product_detail_images .slick-prev:before,
+.product_detail_images .slick-next:before
+{
+        color: slategray;
+        opacity: 0.5;
+} */

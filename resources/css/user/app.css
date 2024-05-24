@@ -2,26 +2,38 @@
 @tailwind components;
 @tailwind utilities;
 
+* {
+    @apply box-border m-0 p-0;
+}
+
+input::-webkit-outer-spin-button,
+input::-webkit-inner-spin-button {
+  -webkit-appearance: none;
+  margin: 0;
+}
+
+/* Firefox */
+input[type=number] {
+  -moz-appearance: textfield;
+}
 
 @layer components {
+    /* Size and position transition when changing*/
     .transition-s-p {
         transition-property: width, height, font-size, top, left, right, bottom;
         transition-duration: 0.7s;
         transition-timing-function: ease-in-out;
     }
 
+    /* Default theme for menu text */
     .text-nav-header {
-        @apply text-xs font-semibold opacity-85 hover:text-sky-600 lg:text-sm;
+        @apply text-xs font-semibold opacity-85 hover:text-sky-700 lg:text-sm;
     }
 }
 
-/* Navbar */
+/* ========== Navbar ========== */
 .menu-active {
-    @apply text-sky-600 opacity-100;
-}
-
-.navbar.shrink {
-    @apply h-12;
+    @apply text-sky-700 opacity-100;
 }
 
 .navbar.shrink .logo img {
@@ -51,3 +63,22 @@
 /* .navbar.shrink #mobile-nav #mobile-menu {
     @apply top-12;
 } */
+
+/* ========== Form Style Focused ========== */
+.focused {
+    @apply -top-3 text-xs;
+}
+
+/* ========== Product Detail ========== */
+/* size selected */
+#product_size_list .btnSizeActive {
+    @apply ring ring-sky-300 bg-sky-500;
+}
+
+/* ========== Media Query ========== */
+@media screen and (min-width: 1024px) {
+    /* Navbar shrink */
+    .navbar.shrink {
+        @apply h-12;
+    }
+}

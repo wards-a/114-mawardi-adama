@@ -77,6 +77,12 @@ const dropdownMenu = () => {
                 subMenu.classList.toggle('hidden');
             }
         });
+
+        if (menu.querySelector('.menu-active')) {
+            parentMenu.classList.add('menu-active');
+        } else {
+            parentMenu.classList.remove('menu-active');
+        }
     }
 }
 

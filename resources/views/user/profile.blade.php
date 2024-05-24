@@ -3,11 +3,10 @@
 @push('css')
 @endpush
 
-@section('title', 'Cara Pemesanan')
+@section('title', 'User')
 
 @section('content')
-    <h1 class="ml-20">*Daftar/Masuk*</h1>
-    <h1 class="ml-20">*Profil Pengguna*</h1>
+    @include('user.partials.pages.profile.profile')
 @endsection
 
 @push('scripts')

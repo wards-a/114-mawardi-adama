@@ -5,7 +5,7 @@
             <a href="{{ route('product.tag', 'recommended') }}" class="mr-2.5 text-sm font-medium lg:font-semibold text-sky-700">Lihat Semua</a>
         </div>
         <div class="product-carousel mb-5 pl-1.5 lg:pl-6">
-            <div class="slick-slide w-full h-80 max-w-44 mx-1 pl-2.5">
+            <div class="slick-slide w-full h-80 max-w-44 mx-1 mb-6 pl-2.5">
                 <a href="#" class="block h-72 max-w-40 shadow-lg rounded-lg">
                     <img class="mx-auto h-44" src="{{ asset('product-img/recommended/goodiebag-blacucream.jpg') }}" alt="">
                     <div class="flex flex-col p-2.5">

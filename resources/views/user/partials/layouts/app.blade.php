@@ -6,6 +6,7 @@
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <title>@yield('title') - {{ config('app.name') }}</title>
     <link rel="icon" href="{{ asset('logo.png') }}" type="image/x-icon">
+    <script src="https://code.jquery.com/jquery-2.2.4.min.js" integrity="sha256-BbhdlvQf/xTY9gja0Dq3HiwQF8LaCRTXxZKRutelT44=" crossorigin="anonymous"></script>
     @vite(['resources/css/user/app.css','resources/js/app.js'])
     @vite('resources/js/user/includes/header.js')
     @stack('css')
@@ -31,7 +32,6 @@
     @include('user.partials.layouts.footer')
     @endif
 
-    <script src="https://code.jquery.com/jquery-2.2.4.min.js" integrity="sha256-BbhdlvQf/xTY9gja0Dq3HiwQF8LaCRTXxZKRutelT44=" crossorigin="anonymous"></script>
     @stack('scripts')
     @vite('resources/js/user/form.js')
     @vite('resources/js/user/dialog_login.js')

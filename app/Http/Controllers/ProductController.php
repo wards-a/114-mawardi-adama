@@ -2,7 +2,9 @@
 
 namespace App\Http\Controllers;
 
+use App\Models\Product;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\DB;
 
 class ProductController extends Controller
 {
@@ -74,7 +76,21 @@ class ProductController extends Controller
 
         // return view('user.product', $data);
 
-        return view('admin.product');
+        $products = $this->fetchProductsForTableContent();
+
+        $table_heads = ['Produk', 'Deskripsi', 'Kategori', 'Flag'];
+        $table_actions = [
+            [
+                'name' => 'edit',
+                'route' => 'product.edit',
+            ],
+            [
+                'name' => 'remove',
+                'route' => '/product',
+            ],
+        ];
+
+        return view('admin.product', compact('products', 'table_heads', 'table_actions'));
     }
 
     /**
@@ -147,5 +163,22 @@ class ProductController extends Controller
         ];
 
         return view('user.product', $data);
+    }
+
+    private function fetchProductsForTableContent()
+    {
+        $products = Product::select(
+            'products.name',
+            'products.description',
+            DB::raw('COALESCE(c.name, \'No Category Assigned\') as category'),
+            DB::raw('COALESCE(f.name, \'No Flag Assigned\') as flag'),
+            'products.id'
+        )
+            ->leftJoin('categories as c', 'c.id', '=', 'products.category_id')
+            ->leftJoin('flags as f', 'f.id', '=', 'products.flag_id')
+            ->orderBy('products.name', 'asc')
+            ->paginate(10);
+
+        return $products;
     }
 }

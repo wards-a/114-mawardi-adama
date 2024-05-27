@@ -4,11 +4,13 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    @yield('csrf-token')
     <title>@yield('title') - {{ config('app.name') }}</title>
     <link rel="icon" href="{{ asset('logo.png') }}" type="image/x-icon">
-    @vite(['resources/css/admin/app.css','resources/js/app.js'])
     @stack('css')
+    @vite(['resources/css/admin/app.css','resources/js/app.js'])
     <script src="https://cdn.ckeditor.com/ckeditor5/41.4.2/classic/ckeditor.js"></script>
+    <script src="https://code.jquery.com/jquery-2.2.4.min.js" integrity="sha256-BbhdlvQf/xTY9gja0Dq3HiwQF8LaCRTXxZKRutelT44=" crossorigin="anonymous"></script>
 </head>
 <body>
     @include('admin.partials.layouts.header')
@@ -20,7 +22,6 @@
 
     @include('admin.partials.layouts.footer')
 
-    <script src="https://code.jquery.com/jquery-2.2.4.min.js" integrity="sha256-BbhdlvQf/xTY9gja0Dq3HiwQF8LaCRTXxZKRutelT44=" crossorigin="anonymous"></script>
     @stack('scripts')
     <script src="https://cdnjs.cloudflare.com/ajax/libs/flowbite/2.3.0/datepicker.min.js"></script>
     <script>

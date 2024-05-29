@@ -6,7 +6,7 @@
 @section('title', 'Tas Belanja')
 
 @section('content')
-@include('user.partials.pages.order.chart')
+@include('user.partials.pages.order.cart')
 @endsection
 
 @push('scripts')

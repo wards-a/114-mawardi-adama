@@ -14,25 +14,37 @@ use App\Http\Controllers\QuotationController;
 use App\Http\Controllers\SessionController;
 use App\Http\Controllers\TagController;
 use App\Http\Controllers\UserController;
+use App\Http\Middleware\AdminAuth;
+use App\Http\Middleware\WithAuth;
+use App\Http\Middleware\WithoutAuth;
 use Illuminate\Support\Facades\Route;
 
+// if user access a non exist route
+Route::fallback(function () {
+    return response()->view('404page');
+});
+
 // Authentication
-Route::controller(AuthenticationController::class)->name('auth.')->group(function() {
-    Route::get('sign-in', 'signInPage')->name('sign-in');
-    Route::get('sign-up', 'signUpPage')->name('sign-up');
-    Route::get('forgot-password', 'forgotPasswordPage')->name('forgot-password');
-    Route::get('log-in', 'logInPage')->name('log-in');
+Route::controller(AuthenticationController::class)->group(function() {
+    Route::get('login', 'logInPage')->name('login')->middleware(WithoutAuth::class);
+    Route::post('login', 'logIn')->name('login.auth')->middleware(WithoutAuth::class);
+    Route::post('logout', 'logOut')->name('logout')->middleware('auth');
+    Route::get('register', 'registerPage')->name('register')->middleware(WithoutAuth::class);
+    Route::get('forgot-password', 'forgotPasswordPage')->name('forgot-password')->middleware(WithoutAuth::class);
+    Route::get('signin', 'signInPage')->name('signin')->middleware(WithoutAuth::class);
+    Route::post('signin', 'signIn')->name('signin.auth')->middleware(WithoutAuth::class);
+    Route::post('signout', 'signOut')->name('signout')->middleware('admin');
 });
 
 //User
 Route::resource('user', UserController::class);
 
 //Address
-Route::resource('address', AddressController::class);
+Route::resource('address', AddressController::class)->middleware('auth');
 
 // Dashboard
 Route::controller(DashboardController::class)->name('dashboard.')->group(function () {
-    Route::get('dashboard', 'index')->name('index');
+    Route::get('dashboard', 'index')->name('index')->middleware('admin');
 });
 
 // Home
@@ -48,16 +60,16 @@ Route::controller(ProductController::class)->prefix('product')->name('product.')
 Route::resource('product', ProductController::class);
 
 // Category
-Route::resource('category', CategoryController::class);
+Route::resource('category', CategoryController::class)->middleware('admin');
 
 // Flag
-Route::resource('flag', FlagController::class);
+Route::resource('flag', FlagController::class)->middleware('admin');
 
 //Tag
-Route::resource('tag', TagController::class);
+// Route::resource('tag', TagController::class);
 
 // Chart
-Route::resource('cart', CartController::class);
+Route::resource('cart', CartController::class)->middleware('auth');
 
 // Quotation
 Route::resource('quotation', QuotationController::class);
@@ -68,9 +80,9 @@ Route::resource('invoice', InvoiceController::class);
 // Order
 Route::resource('order', OrderController::class);
 
-Route::controller(SessionController::class)->prefix('session')->name('session.')->group( function () {
-    Route::post('flash', 'setFlashMessage')->name('flash');
-});
+// Route::controller(SessionController::class)->prefix('session')->name('session.')->group( function () {
+//     Route::post('flash', 'setFlashMessage')->name('flash');
+// });
 
 Route::get('about-us', function () {
     $logo = [

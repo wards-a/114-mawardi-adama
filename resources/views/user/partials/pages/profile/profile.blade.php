@@ -12,7 +12,7 @@
                                 <x-svg class="w-5 h-5" fill="currentColor">
                                     <use xlink:href="/icons.svg#icon-user" />
                                 </x-svg>
-                                <h1 class="text-sm font-medium sm:text-base">Mawardi Adama</h1>
+                                <h1 class="text-sm font-medium sm:text-base">{{ auth()->user()->name }}</h1>
                             </div>
                             <x-svg class="w-5 h-5" fill="none">
                                 <use xlink:href="/icons.svg#icon-angle-right" />
@@ -66,7 +66,9 @@
                     </a>
                 </div>
                 <div class="shadow hover:bg-slate-100">
-                    <a href="/sign-out" class="w-full text-red-500 hover:text-red-600">
+                    <a href="{{ route('logout') }}"
+                        onclick="event.preventDefault(); document.getElementById('logout-form').submit();"
+                        class="w-full text-red-600 hover:text-red-700">
                         <div class="flex justify-between gap-4 basis-full p-2 md:p-4 md:pt-8 lg:pt-5 lg:basis-1/2">
                             <div class="flex items-center gap-1">
                                 <x-svg class="w-5 h-5" fill="none">
@@ -74,11 +76,11 @@
                                 </x-svg>
                                 <h1 class="text-sm font-medium sm:text-base">Keluar</h1>
                             </div>
-                            {{-- <x-svg class="w-5 h-5" fill="none">
-                                <use xlink:href="/icons.svg#icon-angle-right" />
-                            </x-svg> --}}
                         </div>
                     </a>
+                    <form id="logout-form" action="{{ route('logout') }}" method="POST" class="hidden">
+                        @csrf
+                    </form>
                 </div>
             </div>
         </div>

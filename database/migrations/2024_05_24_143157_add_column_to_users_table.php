@@ -13,11 +13,12 @@ return new class extends Migration
     {
         Schema::table('users', function (Blueprint $table) {
             $table->dropColumn('email_verified_at');
-            $table->dropColumn('remember_token');
+            // $table->dropColumn('remember_token');
 
             $table->unsignedInteger('role_id')->after('id');
             $table->string('phone_number', length:25)->nullable()->after('password');
             $table->enum('gender', ['L', 'P'])->nullable()->after('phone_number');
+            $table->softDeletes('deleted_at', precision:0)->after('remember_token');
         });
     }
 

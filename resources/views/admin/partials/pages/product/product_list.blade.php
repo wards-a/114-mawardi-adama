@@ -6,6 +6,7 @@
         class="flex flex-column sm:flex-row flex-wrap space-y-4 justify-between sm:space-y-0 items-center dark:bg-gray-800 sm:rounded-t-lg">
         <div class="flex flex-wrap items-center p-4 gap-4">
             <x-search-bar class="max-w-fit" />
+            <x-dropdown-radio class="max-w-fit" />
             <x-delete-button-icon class="max-w-fit" />
         </div>
         <div class="pe-4">

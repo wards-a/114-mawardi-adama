@@ -30,7 +30,7 @@
                                             <use xlink:href="icons.svg#icon-circle-minus" />
                                         </x-svg>
                                     </button>
-                                    <input id="product_quantity" type="number" class="w-12 font-bold text-sm text-center text-slate-700 focus:outline-none" name="quantity" value="1">
+                                    <input id="product_quantity" type="number" class="w-12 font-bold text-sm text-center text-slate-700 border-0 focus:ring-0" name="quantity" value="1">
                                     <button id="btn-add-quantity" type="button" class="text-slate-700">
                                         <x-svg class="w-4 h-4" fill="currentColor">
                                             <use xlink:href="icons.svg#icon-circle-plus" />

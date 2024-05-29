@@ -156,7 +156,7 @@ class ProductController extends Controller
         if ($request->file('product_images') !== null) {
             $images = $request->file('product_images');
             for ($i = 0; $i < count($images); $i++) {
-                $image_name = time() . '_' . $images[$i]->getClientOriginalName();
+                // $image_name = time() . '_' . $images[$i]->getClientOriginalName();
                 $path = Storage::disk('public')->put('product-img', $images[$i]);
                 $image = new ProductImage([
                     'product_id' => $newProduct->id,
@@ -286,7 +286,7 @@ class ProductController extends Controller
         if ($request->file('product_images') !== null) {
             $images = $request->file('product_images');
             for ($i = 0; $i < count($images); $i++) {
-                $image_name = time() . '_' . $images[$i]->getClientOriginalName();
+                // $image_name = time() . '_' . $images[$i]->getClientOriginalName();
                 $path = Storage::disk('public')->put('product-img', $images[$i]);
                 $image = new ProductImage([
                     // 'product_id' => $newProduct->id,
@@ -336,6 +336,7 @@ class ProductController extends Controller
 
     private function fetchProductsForTableContent()
     {
+        // fetch data for admin page
         $products = Product::select(
             'products.name',
             'products.description',

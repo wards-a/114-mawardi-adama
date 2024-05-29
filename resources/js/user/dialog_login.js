@@ -4,7 +4,7 @@ document.addEventListener('DOMContentLoaded', () => {
     const btnCloseDialog = document.getElementById('closeDialog');
     const overlay = document.getElementById('overlay');
 
-    showDialogLink.addEventListener('click', (e) => {
+    showDialogLink?.addEventListener('click', (e) => {
         if (window.innerWidth >= 1024) {
             e.preventDefault();
             dialogContainer.setAttribute('open', 'open');
@@ -12,7 +12,7 @@ document.addEventListener('DOMContentLoaded', () => {
         }
     });
 
-    btnCloseDialog.addEventListener('click', () => {
+    btnCloseDialog?.addEventListener('click', () => {
         dialogContainer.removeAttribute('open');
         overlay.classList.toggle('hidden');
     });

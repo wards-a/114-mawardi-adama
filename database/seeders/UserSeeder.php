@@ -6,6 +6,7 @@ use App\Models\User;
 use Carbon\Carbon;
 use Illuminate\Database\Console\Seeds\WithoutModelEvents;
 use Illuminate\Database\Seeder;
+use Illuminate\Support\Facades\Hash;
 
 class UserSeeder extends Seeder
 {
@@ -19,9 +20,9 @@ class UserSeeder extends Seeder
         $users = [
             [
                 'role_id' => 1,
-                'name' => 'Halan',
+                'name' => 'Admin',
                 'email' => 'admin@gmail.com',
-                'password' => 'admin',
+                'password' => Hash::make('admin'),
                 'phone_number' => '+6282155026594',
                 'gender' => 'L',
                 'created_at' => Carbon::now(),
@@ -29,9 +30,9 @@ class UserSeeder extends Seeder
             ],
             [
                 'role_id' => 2,
-                'name' => 'Eulish',
+                'name' => 'Customer',
                 'email' => 'customer@gmail.com',
-                'password' => 'customer',
+                'password' => Hash::make('customer'),
                 'phone_number' => '+6281573550274',
                 'gender' => 'P',
                 'created_at' => Carbon::now(),

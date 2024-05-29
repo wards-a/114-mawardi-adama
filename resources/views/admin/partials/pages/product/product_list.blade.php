@@ -16,7 +16,7 @@
 </div>
 <x-delete-modal />
 
-{{-- @if (session('success'))
+@if (session('success'))
     <x-alert.success-alert :message="session('success')"
         class="fixed right-4 top-20 flex items-center p-4 mb-4 text-green-800 rounded-lg bg-green-50 dark:bg-gray-800 dark:text-green-400" />
 @endif
@@ -24,4 +24,4 @@
 @if (session('error'))
     <x-alert.danger-alert :message="session('error')"
         class="fixed right-4 top-20 flex items-center p-4 mb-4 text-red-800 rounded-lg bg-red-50 dark:bg-gray-800 dark:text-red-400" />
-@endif --}}
+@endif

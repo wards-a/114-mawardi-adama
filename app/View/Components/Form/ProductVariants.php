@@ -6,17 +6,12 @@ use Closure;
 use Illuminate\Contracts\View\View;
 use Illuminate\View\Component;
 
-class MultipleFiles extends Component
+class ProductVariants extends Component
 {
     /**
      * Create a new component instance.
      */
-    public function __construct(
-        public string $name,
-        public string $label,
-        public string $class,
-        public string $accept,
-    )
+    public function __construct()
     {
         //
     }
@@ -26,6 +21,6 @@ class MultipleFiles extends Component
      */
     public function render(): View|Closure|string
     {
-        return view('components.form.multiple-files');
+        return view('components.form.product-variants');
     }
 }

@@ -25,8 +25,8 @@ return new class extends Migration
             $table->increments('id');
             $table->unsignedInteger('product_id');
             $table->string('size', length:50)->nullable();
-            $table->decimal('selling_price', 15, 2)->nullable();
-            $table->decimal('cuts_price', 15, 2)->nullable();
+            $table->decimal('selling_price', 10, 2)->nullable();
+            $table->decimal('cuts_price', 10, 2)->nullable();
         });
 
         Schema::create('product_images', function (Blueprint $table) {

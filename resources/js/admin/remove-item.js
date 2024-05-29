@@ -4,7 +4,7 @@ $(document).ready(function() {
     let route = $(this).data('routeRemove');
     let token = $('meta[name="csrf-token"]').attr('content');
 
-    console.log(`${route}/${id}`);
+    // console.log(`${route}/${id}`);
     $('.remove-item').click(function() {
       $.ajax({
         url: `${route}/${id}`,

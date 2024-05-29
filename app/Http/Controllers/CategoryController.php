@@ -55,7 +55,7 @@ class CategoryController extends Controller
         $payload = $request->only(['name', 'description']);
         Category::create($payload);
 
-        return redirect()->route('category.index')->with('success', 'Catgeory created successfully!');
+        return redirect()->route('category.index')->with('success', 'Category created successfully!');
     }
 
     /**

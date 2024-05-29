@@ -5,24 +5,32 @@
         <x-caption title="Informasi Produk" class="mb-6" />
         <x-form.text-input name="product_name" label="Nama" placeholder="Spunbond Press" class="mb-6" />
         <div id="field-container" class="grid gap-6 mb-6 md:grid-cols-2">
-            <x-form.select-option name="product_category" label="Kategori" value="" option=""
-                class="" />
-            <x-form.multiple-options name="product_tags" label="Tags" value="" option=""
-                class="" />
+            <x-form.select-option :collection="$categories" name="product_category" label="Kategori" value=""
+                option="Pilih Kategori" class="" />
+            <x-form.select-option :collection="$flags" name="product_flag" label="Flag" value=""
+                option="Pilih Flag" class="" />
         </div>
         <x-form.ckeditor name="product_description" label="Deskripsi" placeholder="Spunbond Press merupakan tas..."
             class="mb-6" />
         <x-caption title="Ukuran dan Harga" class="mb-6" />
-        <div id="field-container" class="grid gap-6 mb-6 md:grid-cols-3">
-            <x-form.text-input name="product_size" label="Ukuran" placeholder="30x40 cm" class="" />
-            <x-form.number-input name="product_selling_price" label="Harga Jual" placeholder="3500" class="" />
-            <x-form.number-input name="product_cuts_price" label="Harga Coret" placeholder="5000" class="" />
+        <div class="mb-6">
+            <div class="repeater-list mb-4 space-y-6">
+                <x-form.product-variants class="repeater-wrapper md:pt-6" />                
+            </div>
+            <div class="flex flex-wrap">
+                <div class="flex shrink-0 w-full">
+                    <button type="button"
+                        class="btn-repeater-create text-white bg-blue-700 hover:bg-blue-800 focus:ring-4 focus:ring-blue-300 font-medium rounded-lg text-sm px-5 py-2.5 me-2 mb-2 dark:bg-blue-600 dark:hover:bg-blue-700 focus:outline-none dark:focus:ring-blue-800">Tambah
+                        Varian</button>
+                </div>
+            </div>
         </div>
-        <button id="add-button-field" type="button"
-            class="text-white bg-blue-700 hover:bg-blue-800 focus:ring-4 focus:ring-blue-300 font-medium rounded-lg text-sm px-5 py-2.5 me-2 mb-6 dark:bg-blue-600 dark:hover:bg-blue-700 focus:outline-none dark:focus:ring-blue-800">Tambah
-            Opsi Lain</button>
-        <x-caption title="Gambar" class="mb-6" />
-        <x-form.multiple-files name="product_images" label="Gambar Produk" class="mb-6" />
+        <div class="upload-container mb-6">
+            <x-caption title="Gambar" class="mb-6" />
+            <div class="image-preview-wrapper flex flex-wrap gap-2 mb-6"></div>
+            <x-form.multiple-files name="product_images[]" label="Upload Gambar Produk" accept="image/jpeg, image/jpg, image/png" class="input-images" />
+            <p class="mt-1 text-sm text-gray-500 dark:text-gray-300" id="file_input_help">PNG or JPG (MAX. 800x800).</p>
+        </div>
         <button type="submit"
             class="text-white bg-blue-700 hover:bg-blue-800 focus:ring-4 focus:outline-none focus:ring-blue-300 font-medium rounded-lg text-sm w-full sm:w-auto px-5 py-2.5 text-center dark:bg-blue-600 dark:hover:bg-blue-700 dark:focus:ring-blue-800">Simpan</button>
     </form>

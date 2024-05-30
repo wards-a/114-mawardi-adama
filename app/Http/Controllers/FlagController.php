@@ -71,6 +71,7 @@ class FlagController extends Controller
      */
     public function edit(string $id)
     {
+        $id = decrypt($id);
         $flag = Flag::select('id', 'name', 'description')
         ->where('id', $id)
         ->first();

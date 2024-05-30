@@ -2,8 +2,10 @@
 
 namespace App\Http\Controllers;
 
+use App\Models\User;
 use Illuminate\Http\RedirectResponse;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\Hash;
 
 class AuthenticationController extends Controller
 {
@@ -25,7 +27,7 @@ class AuthenticationController extends Controller
         if (auth()->attempt($credentials)) {
             $request->session()->regenerate();
 
-            return redirect()->intended('/');
+            return redirect()->route('profile.show');
         }
 
         // credentials do not match
@@ -48,6 +50,34 @@ class AuthenticationController extends Controller
     public function registerPage()
     {
         return view('user.authentication');
+    }
+
+    public function register(Request $request):RedirectResponse
+    {
+        $request->validate([
+            'name' => ['required', 'max:255', 'string'],
+            'email' => ['required', 'email', 'string', 'unique:users'],
+            'password' => ['required', 'min:8', 'string', 'confirmed']
+        ]);
+
+        // store new user as customer role
+        User::create([
+            'role_id' => 2,
+            'name' => $request->name,
+            'email' => $request->email,
+            'password' => Hash::make($request->password)
+        ]);
+
+        if (auth()->attempt(['email' => $request->email, 'password' => $request->password])) {
+            // User authenticated successfully
+            $request->session()->regenerate();
+            return redirect()->route('profile.show')->with('success', 'Registration successful! You are now logged in.');
+          } else {
+            // Authentication failed
+            return redirect()->route('login')->withErrors(['login' => 'Unable to log in after registration.']);
+          }
+
+        return redirect()->intended('home');
     }
 
     public function forgotPasswordPage()

@@ -3,7 +3,7 @@
 @push('css')
 @endpush
 
-@section('title', 'User')
+@section('title', 'Profile Saya')
 
 @section('content')
     @include('user.partials.pages.profile.profile')

@@ -1,21 +1,22 @@
 <?php
 
+use App\Http\Controllers\AboutController;
 use App\Http\Controllers\AddressController;
 use App\Http\Controllers\AuthenticationController;
 use App\Http\Controllers\CategoryController;
 use App\Http\Controllers\CartController;
+use App\Http\Controllers\ContactController;
 use App\Http\Controllers\DashboardController;
 use App\Http\Controllers\FlagController;
 use App\Http\Controllers\HomeController;
 use App\Http\Controllers\InvoiceController;
 use App\Http\Controllers\OrderController;
 use App\Http\Controllers\ProductController;
+use App\Http\Controllers\ProfileController;
 use App\Http\Controllers\QuotationController;
 use App\Http\Controllers\SessionController;
 use App\Http\Controllers\TagController;
 use App\Http\Controllers\UserController;
-use App\Http\Middleware\AdminAuth;
-use App\Http\Middleware\WithAuth;
 use App\Http\Middleware\WithoutAuth;
 use Illuminate\Support\Facades\Route;
 
@@ -26,36 +27,44 @@ Route::fallback(function () {
 
 // Authentication
 Route::controller(AuthenticationController::class)->group(function() {
+    // login logout user
     Route::get('login', 'logInPage')->name('login')->middleware(WithoutAuth::class);
     Route::post('login', 'logIn')->name('login.auth')->middleware(WithoutAuth::class);
     Route::post('logout', 'logOut')->name('logout')->middleware('auth');
+    // register user
     Route::get('register', 'registerPage')->name('register')->middleware(WithoutAuth::class);
+    Route::post('register', 'register')->name('register.auth')->middleware(WithoutAuth::class);
+    //reset password
     Route::get('forgot-password', 'forgotPasswordPage')->name('forgot-password')->middleware(WithoutAuth::class);
+    // login logout admin
     Route::get('signin', 'signInPage')->name('signin')->middleware(WithoutAuth::class);
     Route::post('signin', 'signIn')->name('signin.auth')->middleware(WithoutAuth::class);
     Route::post('signout', 'signOut')->name('signout')->middleware('admin');
 });
 
-//User
-Route::resource('user', UserController::class);
+// User Profile
+Route::singleton('profile', ProfileController::class)->middleware('auth');
 
 //Address
 Route::resource('address', AddressController::class)->middleware('auth');
-
-// Dashboard
-Route::controller(DashboardController::class)->name('dashboard.')->group(function () {
-    Route::get('dashboard', 'index')->name('index')->middleware('admin');
-});
 
 // Home
 Route::controller(HomeController::class)->name('home.')->group(function () {
     Route::get('home', 'index')->name('index');
 });
 
+// Dashboard
+Route::controller(DashboardController::class)->name('dashboard.')->group(function () {
+    Route::get('dashboard', 'index')->name('index')->middleware('admin');
+});
+
+// User (CRUD)
+Route::resource('user', UserController::class)->middleware('admin');
+
 // Product
 Route::controller(ProductController::class)->prefix('product')->name('product.')->group(function() {
-    Route::get('category/{category}', 'getProductByCategory')->name('category');
-    Route::get('tag/{tag}', 'getProductByTag')->name('tag');
+    Route::get('category/{category}', 'getProductsByCategory')->name('category');
+    Route::get('search', 'search')->name('search');
 });
 Route::resource('product', ProductController::class);
 
@@ -84,129 +93,13 @@ Route::resource('order', OrderController::class);
 //     Route::post('flash', 'setFlashMessage')->name('flash');
 // });
 
-Route::get('about-us', function () {
-    $logo = [
-        "image" => "logo.png",
-        "name" => "Goodiebagcustom",
-        "alt" => "goodiebagcustom"
-    ];
+Route::controller(AboutController::class)->group(function () {
+    Route::get('about-us', 'index')->name('about-us');
+});
 
-    $menu = [
-        [
-            "name" => "Beranda",
-            "path" => "/home",
-            "type" => "text"
-        ],
-        [
-            "name" => "Produk",
-            "path" => "#",
-            "type" => "text",
-            "category" => [
-                [
-                    "name" => "Goodiebag",
-                    "path" => "goodiebag",
-                    "type" => "text"
-                ],
-                [
-                    "name" => "Tas Ransel",
-                    "path" => "produk/tas-ransel",
-                    "type" => "text"
-                ],
-                [
-                    "name" => "Pouch",
-                    "path" => "produk/pouch",
-                    "type" => "text"
-                ]
-            ],
-        ],
-        [
-            "name" => "Tentang Kami",
-            "path" => "/about-us",
-            "type" => "text"
-        ],
-        [
-            "name" => "Kontak Kami",
-            "path" => "/contact-us",
-            "type" => "text"
-        ],
-        [
-            "name" => "Masuk",
-            "path" => "/sign-in",
-            "type" => "text",
-            "src" => "icons.svg#icon-user-circle"
-        ],
-        [
-            "name" => "Tas Belanja",
-            "path" => "/chart",
-            "type" => "icon",
-            "src" => "icons.svg#icon-shopping-bag"
-        ],
-    ];
-
-    return view('user.about_us', compact('logo', 'menu'));
-})->name('about-us');
-
-Route::get('/contact-us', function () {
-    $logo = [
-        "image" => "logo.png",
-        "name" => "Goodiebagcustom",
-        "alt" => "goodiebagcustom"
-    ];
-
-    $menu = [
-        [
-            "name" => "Beranda",
-            "path" => "/home",
-            "type" => "text"
-        ],
-        [
-            "name" => "Produk",
-            "path" => "#",
-            "type" => "text",
-            "category" => [
-                [
-                    "name" => "Goodiebag",
-                    "path" => "goodiebag",
-                    "type" => "text"
-                ],
-                [
-                    "name" => "Tas Ransel",
-                    "path" => "produk/tas-ransel",
-                    "type" => "text"
-                ],
-                [
-                    "name" => "Pouch",
-                    "path" => "produk/pouch",
-                    "type" => "text"
-                ]
-            ],
-        ],
-        [
-            "name" => "Tentang Kami",
-            "path" => "/about-us",
-            "type" => "text"
-        ],
-        [
-            "name" => "Kontak Kami",
-            "path" => "/contact-us",
-            "type" => "text"
-        ],
-        [
-            "name" => "Masuk",
-            "path" => "/sign-in",
-            "type" => "text",
-            "src" => "icons.svg#icon-user-circle"
-        ],
-        [
-            "name" => "Tas Belanja",
-            "path" => "/chart",
-            "type" => "icon",
-            "src" => "icons.svg#icon-shopping-bag"
-        ],
-    ];
-
-    return view('user.contact_us', compact('logo', 'menu'));
-})->name('contactUs');
+Route::controller(ContactController::class)->group(function () {
+    Route::get('contact-us', 'index')->name('contact-us');
+});
 
 //     Route::get('cara-pemesanan', function () {
 //         $logo = [

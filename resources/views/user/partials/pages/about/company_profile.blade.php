@@ -1,4 +1,4 @@
-<section id="company_profile">
+<section id="company_profile" class="min-h-screen">
     <div id="container" class="flex flex-col items-center gap-y-4 w-11/12 mx-auto mt-5 lg:mt-0">
         {{-- Logo and company name --}}
         <figure class="logo flex items-center justify-start">

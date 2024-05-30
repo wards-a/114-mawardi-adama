@@ -1,7 +1,7 @@
 @extends('admin.partials.layouts.app')
 
 @section('breadcrumb')
-    <x-breadcrumb class="flex pt-2" aria-label="Breadcrumb" />
+    <x-breadcrumb class="flex pt-2" for="admin" aria-label="Breadcrumb" />
 @endsection
 
 @section('content')

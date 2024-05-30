@@ -39,6 +39,7 @@ return new class extends Migration
         Schema::create('categories', function (Blueprint $table) {
             $table->increments('id');
             $table->string('name', length:100);
+            $table->string('title', length:100)->nullable();
             $table->text('description')->nullable();
             $table->softDeletes('deleted_at', precision:0);
             $table->timestamps();
@@ -47,6 +48,7 @@ return new class extends Migration
         Schema::create('flags', function (Blueprint $table) {
             $table->increments('id');
             $table->string('name', length:100);
+            $table->string('title', length:100)->nullable();
             $table->text('description')->nullable();
             $table->softDeletes('deleted_at', precision:0);
             $table->timestamps();

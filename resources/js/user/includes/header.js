@@ -57,7 +57,7 @@ const dropdownMenu = () => {
     for (const menu of menus) {
         let parentMenu = menu.querySelector('[class^="parentMenu"]')
         let subMenu = menu.querySelector('[class^="subMenu"]');
-        let iconAngle = parentMenu.querySelector('svg');
+        let iconAngle = parentMenu.querySelector('.mobile-angle');
         
         parentMenu.addEventListener('mouseenter', () => {
             if (screenWidth >= lgScreen) {

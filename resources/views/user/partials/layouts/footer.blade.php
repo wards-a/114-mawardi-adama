@@ -1,4 +1,4 @@
-<footer class="relative w-full top-20 lg:top-24">
+<footer class="relative w-full">
     <section id="footer-top" class="mx-auto bg-slate-100 lg:p-5 lg:flex lg:justify-center">
         <div class="hidden lg:w-11/12 lg:block">
             <ul id="footer-top-desktop" class="lg:flex lg:grow">

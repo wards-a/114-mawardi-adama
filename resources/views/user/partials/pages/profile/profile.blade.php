@@ -1,4 +1,4 @@
-<section id="user-profile" class="mb-10 min-h-screen sm:min-h-min">
+<section id="user-profile" class="min-h-screen">
     <div class="w-11/12 mx-auto mb-5">
         <h1 class="text-lg lg:text-xl">Data Saya</h1>
     </div>

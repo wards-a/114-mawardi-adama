@@ -1,4 +1,4 @@
-<section id="product_detail" class="mb-5">
+<section id="product_detail" class="min-h-screen">
     <div class="w-11/12 mx-auto mb-5">
         <h1 class="text-lg lg:text-xl">Daftar Belanja Anda</h1>
     </div>

@@ -9,68 +9,12 @@ use App\Models\ProductImage;
 use App\Models\Variant;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\DB;
+use Illuminate\Support\Facades\Gate;
 use Illuminate\Support\Facades\Storage;
 use Illuminate\Support\Facades\Validator;
 
 class ProductController extends Controller
 {
-    protected $menu;
-
-    public function __construct()
-    {
-        $this->menu = [
-            [
-                "name" => "Beranda",
-                "path" => "/home",
-                "type" => "text"
-            ],
-            [
-                "name" => "Produk",
-                "path" => "#",
-                "type" => "text",
-                "category" => [
-                    [
-                        "name" => "Goodiebag",
-                        "path" => "/product/category/goodiebag",
-                        "type" => "text"
-                    ],
-                    [
-                        "name" => "Tas Ransel",
-                        "path" => "/product/category/backpack",
-                        "type" => "text"
-                    ],
-                    [
-                        "name" => "Pouch",
-                        "path" => "/product/category/pouch",
-                        "type" => "text"
-                    ]
-                ],
-            ],
-            [
-                "name" => "Tentang Kami",
-                "path" => "/about-us",
-                "type" => "text"
-            ],
-            [
-                "name" => "Kontak Kami",
-                "path" => "/contact-us",
-                "type" => "text"
-            ],
-            [
-                "name" => "Masuk",
-                "path" => "/sign-in",
-                "type" => "text",
-                "src" => "icons.svg#icon-user-circle"
-            ],
-            [
-                "name" => "Tas Belanja",
-                "path" => "/cart",
-                "type" => "icon",
-                "src" => "icons.svg#icon-shopping-bag"
-            ],
-        ];
-    }
-
     /**
      * Display a listing of the resource.
      */
@@ -82,6 +26,16 @@ class ProductController extends Controller
 
         // return view('user.product', $data);
 
+        if (Gate::allows('admin', auth()->user())) {
+            return $this->adminProductList();
+        }
+
+        return redirect('home');
+    }
+
+    protected function adminProductList()
+    {
+        // fetch data for admin product list page
         $products = $this->fetchProductsForTableContent();
 
         $table_heads = ['Produk', 'Deskripsi', 'Kategori', 'Flag'];
@@ -175,11 +129,24 @@ class ProductController extends Controller
      */
     public function show(string $id)
     {
-        $data = [
-            'menu' => $this->menu
+        $categories = $this->fetchCategories(); // for product submenu
+
+        $id = decrypt($id);
+
+        // get product by id and other related information
+        $product = Product::find($id);
+        if (!$product) {
+            return redirect('home')->with('notfound', 'No entry found!');
+        }
+        $product->variants;
+        $product->product_images;
+        // breadcrumb
+        $breadcrumbs = [
+            ['title' => ucwords($product->category->name), 'url' => route('product.category', strtolower($product->category->name))],
+            ['title' => ucwords($product->name), 'url' => ''],
         ];
 
-        return view('user.product', $data);
+        return view('user.product', compact('categories', 'product', 'breadcrumbs'));
     }
 
     /**
@@ -187,6 +154,7 @@ class ProductController extends Controller
      */
     public function edit(string $id)
     {
+        $id = decrypt($id);
         $product = Product::select('id', 'category_id', 'flag_id', 'name', 'description')
             ->where('id', $id)
             ->first();
@@ -244,7 +212,7 @@ class ProductController extends Controller
                     $formData['product_size'][$i] !== null ||
                     $formData['selling_price'][$i] !== null ||
                     $formData['cuts_price'][$i] !== null
-                ) {                    
+                ) {
                     // edit existing variant
                     if ($formData['variant'][$i]) {
                         $variant = $product->variants->where('id', $formData['variant'][$i])->first();
@@ -274,7 +242,7 @@ class ProductController extends Controller
             $imageName = $product->product_images()->where('id', $formData['img_to_remove'])->pluck('image');
             if ($imageName) {
                 foreach ($imageName as $img) {
-                    if(Storage::disk('public')->exists($img)){
+                    if (Storage::disk('public')->exists($img)) {
                         Storage::disk('public')->delete($img); //remove image from storage
                     }
                 }
@@ -314,24 +282,73 @@ class ProductController extends Controller
         ]);
     }
 
-    // Show product by category
-    public function getProductByCategory(string $category)
+    public function search(Request $request)
     {
-        $data = [
-            'menu' => $this->menu
-        ];
+        if ($request->query('flag')) {
+            return $this->getProductsByFlag($request->query('flag'));
+        }
 
-        return view('user.product', $data);
+        return redirect('home');
     }
 
-    // Show product by tag
-    public function getProductByTag(string $tag)
+    // get products by category
+    public function getProductsByCategory(string $category)
     {
-        $data = [
-            'menu' => $this->menu
+        $categories = $this->fetchCategories(); // for the product submenu
+
+        $category = Category::where(DB::raw('LOWER(name)'), strtolower($category))->first(); // get category by name
+        if ($category) {
+            $products = $category->products()->paginate(14); // get all products by category
+            if ($products) {
+                foreach ($products as $product) {
+                    // assign related attribute to each product for product card info
+                    $variant = $product->variants()->whereNotNull('cuts_price')->orderBy('cuts_price', 'asc')->first();
+                    if (!$variant) {
+                        $variant = $product->variants()->orderBy('selling_price', 'asc')->first();;
+                    }
+                    $product->variant = $variant;
+                    $product->image = $product->product_images()->orderBy('image_order', 'asc')->first();
+                    // dd($product);
+                }
+            }
+        } else {
+            return redirect('home')->with('notfound', 'No entries found!');
+        }
+        // dd($products);
+        // breadcrumb
+        $breadcrumbs = [
+            ['title' => ucwords($category->name), 'url' => route('product.category', strtolower($category->name))]
         ];
 
-        return view('user.product', $data);
+        return view('user.product', compact('categories', 'products', 'breadcrumbs'));
+    }
+
+    // Show product by flag
+    protected function getProductsByFlag(string $flag)
+    {
+        $categories = $this->fetchCategories(); // for the product submenu
+
+        $flag = Flag::where(DB::raw('LOWER(name)'), strtolower($flag))->first(); // get category by name
+        if ($flag) {
+            $products = $flag->products()->paginate(14); // get all products by category
+            if ($products) {
+                foreach ($products as $product) {
+                    // assign related attribute to each product for product card info
+                    $variant = $product->variants()->whereNotNull('cuts_price')->orderBy('cuts_price', 'asc')->first();
+                    if (!$variant) {
+                        $variant = $product->variants()->orderBy('selling_price', 'asc')->first();;
+                    }
+                    $product->variant = $variant;
+                    $product->image = $product->product_images()->orderBy('image_order', 'asc')->first();
+                    // dd($product);
+                }
+            }
+        } else {
+            return redirect('home')->with('notfound', 'No entries found!');
+        }
+        // dd($products);
+
+        return view('user.product', compact('categories', 'products'));
     }
 
     private function fetchProductsForTableContent()
@@ -352,6 +369,7 @@ class ProductController extends Controller
         return $products;
     }
 
+    // CREATE UPDATE VALIDATION & RULES
     private function validation($request)
     {
 

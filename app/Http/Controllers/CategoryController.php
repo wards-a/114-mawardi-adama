@@ -71,6 +71,7 @@ class CategoryController extends Controller
      */
     public function edit(string $id)
     {
+        $id = decrypt($id);
         $category = Category::select('id', 'name', 'description')
         ->where('id', $id)
         ->first();
@@ -123,7 +124,6 @@ class CategoryController extends Controller
     private function fetchCategoriesForTableContent()
     {
         $categories = Category::select('name', 'description', 'id')->orderBy('name', 'asc')->paginate(10);
-        dd($categories);
         return $categories;
     }
 

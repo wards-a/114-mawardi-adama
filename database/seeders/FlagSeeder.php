@@ -18,18 +18,21 @@ class FlagSeeder extends Seeder
         $flags = [
             [
                 'name' => 'recommended',
+                'title' => 'Rekomendasi Untukmu',
                 'description' => fake()->sentence(),
                 'created_at' => now(),
                 'updated_at' => now()
             ],
             [
                 'name' => 'new',
+                'title' => 'Produk Baru Kami',
                 'description' => fake()->sentence(),
                 'created_at' => now(),
                 'updated_at' => now()
             ],
             [
                 'name' => 'best-seller',
+                'title' => 'Best Seller All Time',
                 'description' => fake()->sentence(),
                 'created_at' => now(),
                 'updated_at' => now()

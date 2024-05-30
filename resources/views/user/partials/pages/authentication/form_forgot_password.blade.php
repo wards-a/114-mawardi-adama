@@ -1,4 +1,4 @@
-<section id="contact-us-formulir" class="mb-10">
+<section id="contact-us-formulir" class="mb-10 relative top-20">
     <div class="flex flex-col w-11/12 mx-auto px-4 text-center sm:max-w-md">
         <h1 class="text-2xl text-sky-800 mb-2">Lupa Kata Sandi Anda?</h1>
         <p class="text-sm text-slate-500 mb-1">Masukkan email Anda, tautan untuk mengatur ulang kata sandi akan dikirim ke email tersebut.</p>

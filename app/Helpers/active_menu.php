@@ -10,7 +10,7 @@ function active_menu($path) {
 
 function submenu_active($path) {
     // dd(request()->path(), $path);
-    if (str_contains('/'.request()->path(), $path)) {
+    if (str_contains('/'.request()->path(), strtolower($path))) {
         return 'menu-active';
     } else {
         return '';

@@ -18,36 +18,42 @@ class CategorySeeder extends Seeder
         $categories = [
             [
                 'name' => 'Spunbond',
+                'title' => fake()->sentence(),
                 'description' => fake()->sentence(),
                 'created_at' => now(),
                 'updated_at' => now()
             ],
             [
                 'name' => 'Blacu',
+                'title' => fake()->sentence(),
                 'description' => fake()->sentence(),
                 'created_at' => now(),
                 'updated_at' => now()
             ],
             [
                 'name' => 'Dinier',
+                'title' => fake()->sentence(),
                 'description' => fake()->sentence(),
                 'created_at' => now(),
                 'updated_at' => now()
             ],
             [
                 'name' => 'Kanvas',
+                'title' => fake()->sentence(),
                 'description' => fake()->sentence(),
                 'created_at' => now(),
                 'updated_at' => now()
             ],
             [
                 'name' => 'Jeans',
+                'title' => fake()->sentence(),
                 'description' => fake()->sentence(),
                 'created_at' => now(),
                 'updated_at' => now()
             ],
             [
                 'name' => 'Parasut',
+                'title' => fake()->sentence(),
                 'description' => fake()->sentence(),
                 'created_at' => now(),
                 'updated_at' => now()

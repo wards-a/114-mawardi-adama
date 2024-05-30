@@ -1,8 +1,8 @@
 // ================= carousel =================
-const imagesCarousel = () => {
-    // product detail carousel
+$(document).ready(() => {
     $('.image_to_show').slick({
         mobileFirst: true,
+        variableWidth: true,
         slidesToShow: 1,
         slidesToScroll: 1,
         arrows: false,
@@ -11,6 +11,7 @@ const imagesCarousel = () => {
     });
     $('.images_carousel').slick({
         infinite: false,
+        variableWidth: true,
         mobileFirst: true,
         slidesToShow: 4,
         slidesToScroll: 4,
@@ -18,13 +19,13 @@ const imagesCarousel = () => {
         focusOnSelect: true,
         arrows: false,
     });
-}
+});
 
 // ================= Collapse Description =================
 const collapseDescription = () => {
     const article = document.getElementById("description");
     const btnExpand = document.getElementById("btnExpandDescription");
-    
+
     btnExpand.addEventListener('click', () => {
         article.classList.toggle('line-clamp-6');
         if (article.classList.contains('line-clamp-6')) {
@@ -47,7 +48,7 @@ const addThousandSeparator = (number) => {
 }
 
 const addAndSubtractQuantity = () => {
-    let inputChange = new Event('change', {bubbles:true});
+    let inputChange = new Event('change', { bubbles: true });
 
     const quantityInput = document.getElementById('product_quantity');
     const btnSubtractQuantity = document.getElementById('btn-subtract-quantity');
@@ -71,7 +72,7 @@ const addAndSubtractQuantity = () => {
     btnSubtractQuantity.addEventListener('click', () => {
         const quantityValue = parseInt(quantityInput.value);
 
-        if (quantityValue > 1 ) {
+        if (quantityValue > 1) {
             quantityInput.value = quantityValue - 1;
         }
 
@@ -105,22 +106,37 @@ const selectSize = () => {
     const sizeInput = document.getElementById('product_size');
     const priceInput = document.getElementById('product_price');
 
+    window.onload = () => {
+        const sizeActive = document.querySelector('.btnSizeActive');
+        const prices = JSON.parse(sizeActive.getAttribute('data-price'));
+        let inputChange = new Event('change', { bubbles: true });
+
+
+        for (let i = 0; i < priceDisplay.length; i++) {
+            priceDisplay[i].textContent = prices[i] ? "Rp " + addThousandSeparator(prices[i]) : '';
+        }
+
+        sizeInput.value = sizeActive.getAttribute('data-size');
+        priceInput.value = prices[0];
+        priceInput.dispatchEvent(inputChange);
+    }
+
     sizeButtons.forEach(button => {
         const prices = JSON.parse(button.getAttribute('data-price'));
 
         button.addEventListener('click', () => {
-            let inputChange = new Event('change', {bubbles:true});
+            let inputChange = new Event('change', { bubbles: true });
 
             sizeButtons.forEach(btn => {
                 btn.classList.remove('btnSizeActive');
             });
-            
+
             button.classList.add('btnSizeActive');
-            
+
             for (let i = 0; i < priceDisplay.length; i++) {
                 priceDisplay[i].textContent = prices[i] ? "Rp " + addThousandSeparator(prices[i]) : '';
             }
-            
+
             sizeInput.value = button.getAttribute('data-size');
             priceInput.value = prices[0];
             priceInput.dispatchEvent(inputChange);
@@ -142,7 +158,7 @@ const calculationTotalPrice = () => {
             return;
         }
 
-        totalPriceText.textContent = totalPrice ? "Rp "+totalPrice : "Rp 0";    
+        totalPriceText.textContent = totalPrice ? "Rp " + totalPrice : "Rp 0";
     }
 
     // console.log(priceInput.value);
@@ -176,7 +192,6 @@ const shrinkQuantitySection = () => {
 }
 
 $(document).ready(() => {
-    imagesCarousel();
     collapseDescription();
     selectSize();
     addAndSubtractQuantity();

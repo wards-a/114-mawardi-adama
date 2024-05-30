@@ -13,6 +13,7 @@ class Flag extends Model
 
     protected $fillable = [
         'name',
+        'title',
         'description'
     ];
 

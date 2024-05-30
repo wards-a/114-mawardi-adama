@@ -50,13 +50,13 @@ class UserController extends Controller
             ],
             [
                 "name" => "Masuk",
-                "path" => "/sign-in",
+                "path" => "/login",
                 "type" => "text",
                 "src" => "icons.svg#icon-user-circle"
             ],
             [
                 "name" => "Tas Belanja",
-                "path" => "/chart",
+                "path" => "/cart",
                 "type" => "icon",
                 "src" => "icons.svg#icon-shopping-bag"
             ],
@@ -68,11 +68,7 @@ class UserController extends Controller
      */
     public function index()
     {
-        $data = [
-            'menu' => $this->menu
-        ];
-
-        return view('user.profile', $data);
+        //
     }
 
     /**
@@ -96,11 +92,7 @@ class UserController extends Controller
      */
     public function show(string $id)
     {
-        $data = [
-            'menu' => $this->menu
-        ];
-
-        return view('user.profile', $data);
+        //
     }
 
     /**
@@ -127,11 +119,8 @@ class UserController extends Controller
         //
     }
 
-    public function userProfileMenuPage(string $id) {
-        $data = [
-            'menu' => $this->menu
-        ];
-
-        return view('user.profile', $data);
+    public function userProfileMenuPage(string $id) 
+    {
+        //
     }
 }

@@ -6,6 +6,7 @@
 @section('content')
     @if (Route::is('login'))
         @section('title', 'Masuk')
+        <div class="h-20"></div>
         @include('user.partials.pages.authentication.form_login')        
     @endif
 

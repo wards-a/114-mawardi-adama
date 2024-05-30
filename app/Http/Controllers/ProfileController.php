@@ -4,17 +4,15 @@ namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
 
-class CartController extends Controller
+class ProfileController extends Controller
 {
-    
+
     /**
      * Display a listing of the resource.
      */
     public function index()
     {
-        $categories = $this->fetchCategories();
-
-        return view('user.cart', compact('categories'));
+        //
     }
 
     /**
@@ -36,9 +34,11 @@ class CartController extends Controller
     /**
      * Display the specified resource.
      */
-    public function show(string $id)
+    public function show()
     {
-        //
+        $categories = $this->fetchCategories(); // for product submenu
+
+        return view('user.profile', compact('categories'));
     }
 
     /**

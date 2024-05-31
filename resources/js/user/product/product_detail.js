@@ -1,4 +1,5 @@
 // ================= carousel =================
+// product images
 $(document).ready(() => {
     $('.image_to_show').slick({
         mobileFirst: true,
@@ -37,16 +38,19 @@ const collapseDescription = () => {
 }
 
 // ================= Price and Size ================= //
+// PREVENT EVENT "ENTER"
 const preventFormSubmit = (event) => {
     if (event.key === "Enter") {
         event.preventDefault();
     }
 }
 
+// PRICE FORMATTING
 const addThousandSeparator = (number) => {
     return number.toString().replace(/\B(?=(\d{3})+(?!\d))/g, ".");
 }
 
+// QUANTITY ADD AND SUBTRACT HANDLER
 const addAndSubtractQuantity = () => {
     let inputChange = new Event('change', { bubbles: true });
 
@@ -57,6 +61,7 @@ const addAndSubtractQuantity = () => {
     quantityInput.addEventListener('input', () => {
         const quantityValue = parseInt(quantityInput.value);
 
+        // PREVENT MINUS QUANTITY 
         if (quantityValue < 0) {
             quantityInput.value = 1;
         }
@@ -67,8 +72,9 @@ const addAndSubtractQuantity = () => {
         quantityInput.dispatchEvent(inputChange);
     });
 
-    quantityInput.addEventListener('keydown', preventFormSubmit);
+    quantityInput.addEventListener('keydown', preventFormSubmit); // prevent auto submit when user press 'enter'
 
+    // SUBTRACT QUANTITY BUTTON HANDLER
     btnSubtractQuantity.addEventListener('click', () => {
         const quantityValue = parseInt(quantityInput.value);
 
@@ -82,6 +88,7 @@ const addAndSubtractQuantity = () => {
         quantityInput.dispatchEvent(inputChange);
     });
 
+    // ADD QUANTITY BUTTON HANDLER
     btnAddQuantity.addEventListener('click', () => {
         let quantityValue = parseInt(quantityInput.value);
         quantityValue = isNaN(quantityValue) ? 1 : quantityValue + 1;
@@ -100,10 +107,11 @@ const addAndSubtractQuantity = () => {
     });
 }
 
+// SIZE SELECTION HANDLER
 const selectSize = () => {
     const sizeButtons = document.querySelectorAll('.product_size');
     const priceDisplay = document.querySelectorAll('#product_price_display p');
-    const sizeInput = document.getElementById('product_size');
+    const variant = document.getElementById('product_variant');
     const priceInput = document.getElementById('product_price');
 
     window.onload = () => {
@@ -111,13 +119,13 @@ const selectSize = () => {
         const prices = JSON.parse(sizeActive.getAttribute('data-price'));
         let inputChange = new Event('change', { bubbles: true });
 
-
         for (let i = 0; i < priceDisplay.length; i++) {
+            // change price by size (under product name)
             priceDisplay[i].textContent = prices[i] ? "Rp " + addThousandSeparator(prices[i]) : '';
         }
 
-        sizeInput.value = sizeActive.getAttribute('data-size');
-        priceInput.value = prices[0];
+        variant.value = sizeActive.getAttribute('data-variant'); // set value for input field
+        priceInput.value = prices[0]; // set price value by category
         priceInput.dispatchEvent(inputChange);
     }
 
@@ -137,7 +145,7 @@ const selectSize = () => {
                 priceDisplay[i].textContent = prices[i] ? "Rp " + addThousandSeparator(prices[i]) : '';
             }
 
-            sizeInput.value = button.getAttribute('data-size');
+            variant.value = button.getAttribute('data-variant');
             priceInput.value = prices[0];
             priceInput.dispatchEvent(inputChange);
             // console.log(priceInput.value);
@@ -145,6 +153,7 @@ const selectSize = () => {
     });
 }
 
+// TOTAL PRICE CALCULATION
 const calculationTotalPrice = () => {
     const totalPriceText = document.getElementById('total_price');
     const priceInput = document.getElementById('product_price');
@@ -158,7 +167,7 @@ const calculationTotalPrice = () => {
             return;
         }
 
-        totalPriceText.textContent = totalPrice ? "Rp " + totalPrice : "Rp 0";
+        totalPriceText.textContent = totalPrice ? "Rp " + totalPrice : "Rp 0"; // display the price
     }
 
     // console.log(priceInput.value);
@@ -171,6 +180,7 @@ const calculationTotalPrice = () => {
     });
 }
 
+// enable section closing when the page width shrinks
 const shrinkQuantitySection = () => {
     const btnShrink = document.getElementById('shrink-quantity-section');
     const quantitySection = document.getElementById('quantity-section');

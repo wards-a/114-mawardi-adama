@@ -8,3 +8,5 @@ ATTRIBUTION LINK
 <a href="https://www.flaticon.com/free-icons/deal" title="deal icons">Deal icons created by Parzival’ 1997 - Flaticon</a>
 <a href="https://www.flaticon.com/free-icons/market-analysis" title="market analysis icons">Market analysis icons created by Parzival’ 1997 - Flaticon</a>
 <a href="https://www.flaticon.com/free-icons/chatbot" title="chatbot icons">Chatbot icons created by Parzival’ 1997 - Flaticon</a>
+
+<a href="https://www.flaticon.com/free-icons/pdf" title="pdf icons">Pdf icons created by Dimitry Miroliubov - Flaticon</a>

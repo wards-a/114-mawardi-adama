@@ -1,16 +1,52 @@
 // ================= Chart ================= //
+
+// PRVENT EVENT "ENTER"
 const preventFormSubmit = (event) => {
     if (event.key === "Enter") {
         event.preventDefault();
     }
 }
 
+// PRICE FORMATTING
 const addThousandSeparator = (number) => {
     return number.toString().replace(/\B(?=(\d{3})+(?!\d))/g, ".");
 }
 
+// CART PAGE CHECKBOX ITEM
+const checkBoxAll = () => {
+    const checkInput = document.getElementById('checkbox-item-all');
+    const checkItemInputs = document.querySelectorAll('.checkbox-item');
+
+    // checkbox all item
+    checkInput.addEventListener('change', () => {
+        if (checkInput.checked) {
+            checkItemInputs.forEach(check => check.checked = true);
+        } else {
+            checkItemInputs.forEach(check => check.checked = false);
+        }
+    });
+
+    // chekbox single item
+    checkItemInputs.forEach(check => {
+        check.addEventListener('change', (e) => {
+            if (!e.target.checked) {
+                checkInput.checked = false;
+            }
+
+            for (const check of checkItemInputs) {
+                if (check.checked === false) {
+                    return
+                }
+            }
+
+            checkInput.checked = true;
+        });
+    });
+}
+
+// QUANTIYTY HANDLER
 const addAndSubtractQuantity = () => {
-    let inputChange = new Event('change', {bubbles:true});
+    let inputChange = new Event('change', { bubbles: true });
 
     const quantityInput = document.getElementById('product_quantity');
     const btnSubtractQuantity = document.getElementById('btn-subtract-quantity');
@@ -29,12 +65,12 @@ const addAndSubtractQuantity = () => {
         quantityInput.dispatchEvent(inputChange);
     });
 
-    quantityInput.addEventListener('keydown', preventFormSubmit);
+    quantityInput.addEventListener('keydown', preventFormSubmit); // prevent auto submit when user click 'enter'
 
     btnSubtractQuantity.addEventListener('click', () => {
         const quantityValue = parseInt(quantityInput.value);
 
-        if (quantityValue > 1 ) {
+        if (quantityValue > 1) {
             quantityInput.value = quantityValue - 1;
         }
 
@@ -72,18 +108,18 @@ const selectSize = () => {
         const prices = JSON.parse(button.getAttribute('data-price'));
 
         button.addEventListener('click', () => {
-            let inputChange = new Event('change', {bubbles:true});
+            let inputChange = new Event('change', { bubbles: true });
 
             sizeButtons.forEach(btn => {
                 btn.classList.remove('btnSizeActive');
             });
-            
+
             button.classList.add('btnSizeActive');
-            
+
             for (let i = 0; i < priceDisplay.length; i++) {
                 priceDisplay[i].textContent = prices[i] ? "Rp " + addThousandSeparator(prices[i]) : '';
             }
-            
+
             sizeInput.value = button.getAttribute('data-size');
             priceInput.value = prices[0];
             priceInput.dispatchEvent(inputChange);
@@ -105,7 +141,7 @@ const calculationTotalPrice = () => {
             return;
         }
 
-        totalPriceText.textContent = totalPrice ? "Rp "+totalPrice : "Rp 0";    
+        totalPriceText.textContent = totalPrice ? "Rp " + totalPrice : "Rp 0";
     }
 
     // console.log(priceInput.value);
@@ -138,7 +174,49 @@ const shrinkQuantitySection = () => {
     });
 }
 
+// MAKE A REQUEST
+const requestQuotation = () => {
+    const btnRequestQuo = document.querySelector('.btn-request-quotation');
+    btnRequestQuo.addEventListener('click', () => {
+        const checkedBoxes = document.querySelectorAll('input[type="checkbox"]:checked');
+        const checkedValues = [...checkedBoxes].filter(checkbox => checkbox.value).map(checkbox => checkbox.value);
+        if (checkedValues > 0) {
+            fetch('/session/add-item', {
+                method: 'POST',
+                headers: {
+                    'Content-Type': 'application/json',
+                    'X-CSRF-TOKEN': $('meta[name="csrf-token"]').attr('content')
+                },
+                body: JSON.stringify(checkedValues)
+            })
+            .then(response => {
+                if (!response.ok) {
+                    throw new Error(`HTTP error! status: ${response.status}`);
+                }
+                return response.redirected ? response.url : null; // Check for redirect
+            })
+            .then(redirectUrl => {
+                if (redirectUrl) {
+                    // Handle redirect on the client-side
+                    window.location.href = redirectUrl;  // Redirect to the new URL
+                } else {
+                    // Handle non-redirect response (optional)
+                    console.log('Form submitted successfully (no redirect)');
+                }
+            })
+            .catch(error => {
+                console.error('Error:', error);
+                // Handle errors (e.g., display an error message)
+            });
+        } else {
+            // alert cause no item selected
+        }
+    });
+}
+
 $(document).ready(() => {
+    checkBoxAll();
+    requestQuotation();
     // selectSize();
     // addAndSubtractQuantity();
     // calculationTotalPrice();

@@ -35,7 +35,7 @@ $(document).ready(function () {
                     reader.onload = function (e) {
                         let html = "";
                         if (f.type == 'application/pdf') {
-                            html = "<div class='upload__img-box'><div style='background-image: url(" + e.target.result + ")' data-number='" + $(".upload__img-close").length + "' data-file='" + f.name + "' class='img-bg' ><div class='upload__img-close'></div><img  src='https://cdn-icons-png.flaticon.com/128/337/337946.png'></div></div>";
+                            html = "<div class='w-fit relative'><img src='/icon-png/pdf.png' data-number='" + $(".upload__img-close").length + "' data-file='" + f.name + "' class='h-40' /><div class='img-close absolute top-px right-px text-center text-white z-10 cursor-pointer w-6 h-6 rounded-full bg-gray-900 opacity-50'>X</div></div>";
                         } else {
                             html = "<div class='w-fit relative'><img src='" + e.target.result + "' data-number='" + $(".upload__img-close").length + "' data-file='" + f.name + "' class='h-40' /><div class='img-close absolute top-px right-px text-center text-white z-10 cursor-pointer w-6 h-6 rounded-full bg-gray-900 opacity-50'>X</div></div>";
                         }

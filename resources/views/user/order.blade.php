@@ -6,9 +6,11 @@
 @section('title', 'Cara Pemesanan')
 
 @section('content')
-    <h1 class="ml-20">Buat Pesanan</h1>
-    <h1 class="ml-20">*Form Pesanan*</h1>
+    @if (Route::is('order.create'))
+        <x-breadcrumb :breadcrumbs="$breadcrumbs" for="user" class="w-11/12 relative -top-3 mx-auto md:ps-4" />
+        @include('user.partials.pages.order.user_information_form')
+        @push('scripts')
+            @vite('resources/js/admin/images-preview.js')
+        @endpush
+    @endif
 @endsection
-
-@push('scripts')
-@endpush

@@ -29,7 +29,7 @@
                 <h2 class="text-sm text-slate-500">Atau untuk seputar produk dan pemesanan Anda bisa menghubungi kami melalui</h2>
                 <div class="flex justify-start gap-x-3">
                     <x-svg class="w-7 h-7 text-sky-900" fill="none">
-                        <use xlink:href="icons.svg#icon-whatsapp"></use>
+                        <use xlink:href="/icons.svg#icon-whatsapp"></use>
                     </x-svg>
                     <div class="space-y-px">
                         <p class="text-sm font-semibold text-sky-800">Whatsapp</p>
@@ -42,7 +42,7 @@
                 </div>
                 <div class="flex justify-start gap-x-3">
                     <x-svg class="w-7 h-7 text-sky-900" fill="none">
-                        <use xlink:href="icons.svg#icon-envelope"></use>
+                        <use xlink:href="/icons.svg#icon-envelope"></use>
                     </x-svg>
                     <div class="space-y-px">
                         <p class="text-sm font-semibold text-sky-800">Email</p>

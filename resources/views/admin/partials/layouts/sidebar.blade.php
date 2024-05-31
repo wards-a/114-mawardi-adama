@@ -50,7 +50,7 @@
                 </button>
                 <ul id="dropdown-quotations" class="hidden py-2 space-y-2">
                     <li>
-                        <a href="#"
+                        <a href="{{ route('quotation.request') }}"
                             class="flex items-center w-full p-2 text-gray-900 transition duration-75 rounded-lg pl-11 group hover:bg-gray-100 dark:text-white dark:hover:bg-gray-700">
                             <span class="flex-1 whitespace-nowrap">Request</span>
                             <span
@@ -58,7 +58,7 @@
                         </a>
                     </li>
                     <li>
-                        <a href="#"
+                        <a href="{{ route('quotation.index') }}"
                             class="flex items-center w-full p-2 text-gray-900 transition duration-75 rounded-lg pl-11 group hover:bg-gray-100 dark:text-white dark:hover:bg-gray-700">Daftar
                             Quotation</a>
                     </li>

@@ -59,16 +59,18 @@
                         @endif
                     @endforeach
                     @foreach ($tactions as $action)
-                        @if ($action['name'] === 'edit')
-                            {{-- {{ dd($items['id']) }} --}}
-                            <td class="px-6 py-4 text-right">
-                                <a href="{{ route($action['route'], encrypt($items['id'])) }}"
-                                    class="font-medium text-blue-600 dark:text-blue-500 hover:underline">Ubah</a>
-                            </td>
-                        @endif
                         @if ($action['name'] === 'remove')
                             <td class="px-6 py-4 text-right">
-                                <button type="button" data-modal-target="popup-modal" data-modal-toggle="popup-modal" data-item-id="{{ $items['id'] }}" data-route-remove="{{ $action['route'] }}" class="btn-remove-item font-medium text-red-600 dark:text-red-500 hover:underline">Hapus</button>
+                                <button type="button" data-modal-target="popup-modal" data-modal-toggle="popup-modal"
+                                    data-item-id="{{ $items['id'] }}" data-route-remove="{{ $action['route'] }}"
+                                    class="btn-remove-item font-medium text-red-600 dark:text-red-500 hover:underline">Hapus</button>
+                            </td>
+                        @else
+                            <td class="px-6 py-4 text-right">
+                                <a href="{{ route($action['route'], encrypt($items['id'])) }}"
+                                    class="font-medium text-blue-600 dark:text-blue-500 hover:underline">
+                                    {{ ucwords($action['name']) }}
+                                </a>
                             </td>
                         @endif
                     @endforeach

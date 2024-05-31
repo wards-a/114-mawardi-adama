@@ -24,6 +24,7 @@
         @include('user.partials.pages.product.product_detail')
         @push('scripts')
             @vite('resources/js/user/product/product_detail.js')
+            @vite('resources/js/user/product/add_to_cart.js')
         @endpush
     @endif
 

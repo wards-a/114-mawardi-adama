@@ -18,4 +18,16 @@ class SessionController extends Controller
             return response()->json(['success' => false, 'error' => 'Missing message parameter'], 422); // Error response for missing message
         }
     }
+
+    public function addItemToRequestQuo(Request $request)
+    {
+        $request->session()->put('requested_item', []);
+
+        $requested_item = $request->session()->get('requested_item');
+        $requested_item[] = $request->all();
+      
+        $request->session()->put('requested_item', $requested_item);
+
+        return redirect()->route('order.create');
+    }
 }

@@ -81,6 +81,10 @@ Route::resource('flag', FlagController::class)->middleware('admin');
 Route::resource('cart', CartController::class)->middleware('auth');
 
 // Quotation
+Route::controller(QuotationController::class)->prefix('quotation')->name('quotation.')->group(function() {
+    Route::get('request', 'getOrdersWithoutQuo')->name('request');
+    Route::get('createquo/{createquo}', 'createQuoByOrder')->name('create.by.order');
+});
 Route::resource('quotation', QuotationController::class);
 
 // Invoice
@@ -89,9 +93,9 @@ Route::resource('invoice', InvoiceController::class);
 // Order
 Route::resource('order', OrderController::class);
 
-// Route::controller(SessionController::class)->prefix('session')->name('session.')->group( function () {
-//     Route::post('flash', 'setFlashMessage')->name('flash');
-// });
+Route::controller(SessionController::class)->prefix('session')->name('session.')->group( function () {
+    Route::post('add-item', 'addItemToRequestQuo')->name('request.item');
+});
 
 Route::controller(AboutController::class)->group(function () {
     Route::get('about-us', 'index')->name('about-us');

@@ -6,6 +6,7 @@ use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Model;
 use Illuminate\Database\Eloquent\Relations\BelongsTo;
 use Illuminate\Database\Eloquent\Relations\HasMany;
+use Illuminate\Database\Eloquent\Relations\HasOne;
 use Illuminate\Database\Eloquent\SoftDeletes;
 
 class Product extends Model
@@ -37,5 +38,20 @@ class Product extends Model
     public function variants(): HasMany
     {
         return $this->hasMany(Variant::class);
+    }
+
+    public function cart_items(): HasMany
+    {
+        return $this->hasMany(CartItem::class);
+    }
+
+    /**
+     * Get all of the order_items for the Product
+     *
+     * @return \Illuminate\Database\Eloquent\Relations\HasMany
+     */
+    public function order_items(): HasMany
+    {
+        return $this->hasMany(OrderItem::class, 'product_id', 'id');
     }
 }

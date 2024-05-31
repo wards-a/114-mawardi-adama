@@ -43,7 +43,7 @@
                                 @if ($loop->first)
                                     <button type="button"
                                         class="product_size w-24 bg-sky-600 py-1 rounded-full btnSizeActive"
-                                        data-size="{{ $variant->size }}"
+                                        data-variant="{{ $variant->id }}"
                                         data-price="[{{ $variant->selling_price }}{{ $variant->cuts_price ? ', '.$variant->cuts_price : '' }}]">
                                         <p class="text-xs font-semibold text-white tracking-wider">{{ $variant->size }}
                                         </p>
@@ -51,7 +51,7 @@
                                 @else
                                     <button type="button"
                                         class="product_size w-24 bg-sky-600 py-1 rounded-full"
-                                        data-size="{{ $variant->size }}"
+                                        data-variant="{{ $variant->id }}"
                                         data-price="[{{ $variant->selling_price }}{{ $variant->cuts_price ? ', '.$variant->cuts_price : '' }}]">
                                         <p class="text-xs font-semibold text-white tracking-wider">{{ $variant->size }}
                                         </p>
@@ -86,10 +86,10 @@
                     class="flex justify-between items-center border-b py-2 lg:block lg:space-y-3">
                     <p class="font-semibold text-slate-700 shrink-0">Jumlah Barang</p>
                     <div id="quantity_input">
-                        <form id="productOrderForm" action="/order" method="POST">
+                        <form id="productOrderForm" action="" method="POST">
                             @csrf
-                            <input type="hidden" id="product_name" name="product_name" value="Blacu Cream">
-                            <input type="hidden" id="product_size" name="product_size" value="20x25">
+                            <input type="hidden" id="product_id" name="product_id" value="{{ $product->id }}">
+                            <input type="hidden" id="product_variant" name="product_variant" value="">
                             <input type="hidden" id="product_price" name="product_price" value="15000">
                             <fieldset class="flex justify-between">
                                 <button id="btn-subtract-quantity" type="button" class="text-slate-500" disabled>
@@ -127,7 +127,7 @@
                         </a>
                     </div>
                     <button type="button"
-                        class="group basis-1/2 text-sky-600 border-2 border-sky-600 py-1 rounded-3xl active:bg-sky-600 lg:py-0">
+                        class="btn-add-to-cart group basis-1/2 text-sky-600 border-2 border-sky-600 py-1 rounded-3xl active:bg-sky-600 lg:py-0">
                         <x-svg class="w-6 h-6 mx-auto group-active:text-white lg:inline-block lg:mx-0" fill="none">
                             <use xlink:href="/icons.svg#icon-shopping-bag"></use>
                         </x-svg>

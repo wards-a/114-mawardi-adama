@@ -18,8 +18,8 @@
 
             {{-- Menu Order --}}
             <div class="w-6 h-6 content-center lg:ml-4">
-                <a href="{{ route('cart.index') }}"
-                    class="text-nav-header transition-s-p transition-colors duration-300 ease-in-out {{ '/' . request()->path() === '/cart' ? 'menu-active' : '' }}"
+                <a href="{{ route('cart.show', auth()->check() ? encrypt(auth()->user()->id) : '') }}"
+                    class="text-nav-header transition-s-p transition-colors duration-300 ease-in-out {{ str_contains('/' . request()->path(), '/cart') ? 'menu-active' : '' }}"
                     aria-expanded="true" aria-haspopup="true">
                     <x-svg class="w-6 h-6 text-nav-header transition-s-p" fill="none">
                         <use xlink:href="/icons.svg#icon-shopping-bag"></use>

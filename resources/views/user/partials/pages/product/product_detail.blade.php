@@ -136,8 +136,8 @@
                     </button>
                 </div>
                 <button type="button"
-                    class="text-sm basis-2/4 bg-sky-600 text-white py-1 rounded-full active:bg-sky-800 lg:basis-full lg:order-first">Minta
-                    Penawaran</button>
+                    class="text-sm basis-2/4 bg-sky-600 text-white py-1 rounded-full active:bg-sky-800 lg:basis-full lg:order-first">Buat
+                    Pesanan</button>
             </div>
         </div>
     </div>

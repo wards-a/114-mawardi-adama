@@ -4,7 +4,7 @@
         <p class="text-xs text-slate-500 mb-1 lg:text-sm">Sampaikan pertanyaan, saran, dan masukan Anda melalui formulir di bawah.</p>
         <div class="flex flex-col gap-10 md:flex-row">
             <div id="contact-form-container" class="md:basis-9/12 md:pr-14 md:border-r md:border-slate-500">
-                <form id="formContactUs" action="" method="post" class="space-y-8"> {{-- route('user.contact.send') --}}
+                <form id="formContactUs" action="{{ route('send-mail') }}" method="post" class="space-y-8">
                     @csrf
                     <fieldset class="relative input">
                         <label for="name" class="absolute top-1.5 text-sm text-slate-500 transiton duration-300">Nama Lengkap <span class="text-xs">*</span></label>
@@ -40,18 +40,18 @@
                         </div>
                     </div>
                 </div>
-                <div class="flex justify-start gap-x-3">
+                {{-- <div class="flex justify-start gap-x-3">
                     <x-svg class="w-7 h-7 text-sky-900" fill="none">
                         <use xlink:href="/icons.svg#icon-envelope"></use>
                     </x-svg>
                     <div class="space-y-px">
-                        <p class="text-sm font-semibold text-sky-800">Email</p>
+                        <p class="text-sm font-semibold text-sky-800">Email</p> --}}
                         {{-- <p class="text-slate-500 text-xs font-medium">Melayani Anda pada 08.00 - 16.00 WIB</p> --}}
-                        <div class="text-sm text-slate-600 space-y-px">
+                        {{-- <div class="text-sm text-slate-600 space-y-px">
                             <p>customgoodiebag@gmail.com</p>
                         </div>
                     </div>
-                </div>
+                </div> --}}
             </div>
         </div>
     </div>

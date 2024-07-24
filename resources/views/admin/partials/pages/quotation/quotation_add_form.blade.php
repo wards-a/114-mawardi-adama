@@ -15,12 +15,12 @@
                     <div class="flex shrink-0 basis-full md:basis-1/2 mt-5 pe-5">
                         <div class="flex flex-col items-end gap-4 w-full">
                             <h1 class="text-xl font-semibold text-left rtl:text-right text-gray-900 dark:text-white">
-                                Quotation
+                                Invoice
                             </h1>
                             <div class="flex items-center gap-12">
                                 <span class="text-sm text-gray-900 font-bold dark:text-white">Referensi</span>
                                 <x-form.text-input name="quotation_reference" label="" class=""
-                                    placeholder="Quo/2024/0164" />
+                                    placeholder="INV/2024/0164" />
                             </div>
                             <div class="flex items-center gap-4">
                                 <span class="text-sm text-gray-900 font-bold dark:text-white">Tanggal</span>
@@ -143,7 +143,7 @@
     <div class="flex shrink-0 w-full px-4 max-h-48 lg:w-3/12 quotation-action lg:sticky lg:top-24">
         <div id="quotation-option" class="flex flex-col p-2 w-full shadow-md dark:bg-gray-800 sm:rounded-lg">
             <div class="flex-1 p-4 space-y-3">
-                <button type="button"
+                {{-- <button type="button"
                     class="w-full justify-center px-3 py-2 text-sm font-medium text-center inline-flex items-center text-white bg-blue-700 rounded-lg hover:bg-blue-800 focus:ring-4 focus:outline-none focus:ring-blue-300 dark:bg-blue-600 dark:hover:bg-blue-700 dark:focus:ring-blue-800">
                     <svg class="w-5 h-5 text-white me-1 rotate-45" aria-hidden="true"
                         xmlns="http://www.w3.org/2000/svg" fill="currentColor" viewBox="0 0 24 24">
@@ -152,7 +152,7 @@
                             clip-rule="evenodd" />
                     </svg>
                     Send Quotation
-                </button>
+                </button> --}}
                 <a href="#"
                     class="text-white block w-full bg-gray-600 hover:bg-gray-700 focus:ring-4 focus:ring-gray-200 font-medium rounded-lg text-sm px-2 py-2 text-center dark:focus:ring-gray-800">Preview</a>
                 <button type="button"

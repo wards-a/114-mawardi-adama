@@ -1,9 +1,9 @@
 <section class="w-full mt-3 mb-40 clear-both">
     <div class="w-full px-5 min-h-screen md:px-16">
         <div class="w-full px-3.5 mb-5 lg:mb-8 lg:px-0">
-            @if (request()->has('flag'))
-                <p class="text-sm text-slate-500 font-medium md:ps-2">Total {{ count($products) }} produk ditemukan
-                    dengan kata kunci <strong>"{{ request()->query('flag') }}"</strong></p>
+            @if (request()->has('keywords'))
+                <p class="text-sm text-slate-500 font-medium md:ps-2">Total <strong>{{ count($products) }}</strong> produk ditemukan
+                    dengan kata kunci <strong>"{{ request()->input('keywords') }}"</strong></p>
             @endif
         </div>
         <div class="table w-full clear-both">

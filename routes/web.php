@@ -64,6 +64,7 @@ Route::resource('user', UserController::class)->middleware('admin');
 // Product
 Route::controller(ProductController::class)->prefix('product')->name('product.')->group(function() {
     Route::get('category/{category}', 'getProductsByCategory')->name('category');
+    Route::get('flag/{flag}', 'getProductsByFlag')->name('flag');
     Route::get('search', 'search')->name('search');
 });
 Route::resource('product', ProductController::class);
@@ -103,6 +104,7 @@ Route::controller(AboutController::class)->group(function () {
 
 Route::controller(ContactController::class)->group(function () {
     Route::get('contact-us', 'index')->name('contact-us');
+    Route::post('send-mail', 'sendMail')->name('send-mail');
 });
 
 //     Route::get('cara-pemesanan', function () {

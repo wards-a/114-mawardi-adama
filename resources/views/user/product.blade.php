@@ -10,12 +10,13 @@
 
 @section('content')
 
-    @if (Route::is('product.category'))
+    @if (Route::is('product.category') || Route::is('product.flag'))
         <x-breadcrumb :breadcrumbs="$breadcrumbs" for="user" class="w-11/12 mx-auto md:ps-4" />
         @include('user.partials.pages.product.content')
     @endif
 
-    @if (Route::is('product.category') || Route::is('product.search'))
+    @if (Route::is('product.search'))
+        <x-breadcrumb :breadcrumbs="$breadcrumbs" for="user" class="relative -top-2.5 w-11/12 mx-auto md:ps-2" />
         @include('user.partials.pages.product.content')
     @endif
 

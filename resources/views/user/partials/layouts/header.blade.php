@@ -13,11 +13,23 @@
 
         {{-- remove navigation on login, register, forgot password page --}}
         @if (!in_array(Route::currentRouteName(), ['login', 'register', 'forgot-password']))
+            {{-- Menu Search --}}
+            <div class="content-center lg:ml-20">
+                <form action="{{ route('product.search') }}" method="GET" class="form-search hidden relative w-full lg:block">
+                    <input name="keywords" class="text-sm bg-slate-200 leading-5 border-white rounded-full w-96 transition-s-p focus:border-0 focus:ring-0 focus:outline-0" type="text" placeholder="Cari Produk">
+                    <span class="absolute icon-search">
+                        <x-svg class="absolute w-5 h-5 text-slate-500 right-2 top-2 transition-s-p" fill="none">
+                            <use xlink:href="/icons.svg#icon-search"></use>
+                        </x-svg>
+                    </span>
+                </form>
+            </div>
+
             {{-- Navbar --}}
-            <x-navigation.navbar-user :submenus="$categories" class="nav-menu hidden h-full lg:block lg:flex lg:ml-auto" />
+            <x-navigation.navbar-user :submenus="$categories" class="nav-menu hidden h-full lg:block lg:flex lg:ml-4" />
 
             {{-- Menu Order --}}
-            <div class="w-6 h-6 content-center lg:ml-4">
+            <div class="w-6 h-6 content-center lg:-ml-6">
                 <a href="{{ route('cart.show', auth()->check() ? encrypt(auth()->user()->id) : '') }}"
                     class="text-nav-header transition-s-p transition-colors duration-300 ease-in-out {{ str_contains('/' . request()->path(), '/cart') ? 'menu-active' : '' }}"
                     aria-expanded="true" aria-haspopup="true">

@@ -74,8 +74,8 @@
                         </div>
                     </fieldset>
                     <button type="submit"
-                        class="w-full py-1.5 text-center text-sm text-sky-800 font-medium bg-slate-200 rounded-sm transition-all duration-300 hover:bg-slate-300 active:bg-sky-700 active:text-white sm:w-40">Request
-                        Quotation
+                        class="w-full py-1.5 text-center text-sm text-sky-800 font-medium bg-slate-200 rounded-sm transition-all duration-300 hover:bg-slate-300 active:bg-sky-700 active:text-white sm:w-40">
+                        Kirim
                     </button>
                 </form>
             </div>

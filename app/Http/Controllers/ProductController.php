@@ -284,11 +284,34 @@ class ProductController extends Controller
 
     public function search(Request $request)
     {
-        if ($request->query('flag')) {
-            return $this->getProductsByFlag($request->query('flag'));
+        $keywords = $request->input('keywords');
+     
+        if (!$keywords) {
+            return redirect()->route('home.index');
         }
 
-        return redirect('home');
+        $products = Product::where('name', 'like', "%{$keywords}%")->paginate(14);
+        if ($products) {
+            foreach ($products as $product) {
+                // assign related attribute to each product for product card info
+                $variant = $product->variants()->whereNotNull('cuts_price')->orderBy('cuts_price', 'asc')->first();
+                if (!$variant) {
+                    $variant = $product->variants()->orderBy('selling_price', 'asc')->first();;
+                }
+                $product->variant = $variant;
+                $product->image = $product->product_images()->orderBy('image_order', 'asc')->first();
+                // dd($product);
+            }
+        }
+
+        //breadcrumb
+        $breadcrumbs = [
+            ['title' => ucwords($keywords), 'url' => "#"]
+        ];
+
+        $categories = $this->fetchCategories(); // for the product submenu
+
+        return view('user.product', compact('products', 'breadcrumbs', 'categories'));
     }
 
     // get products by category
@@ -324,7 +347,7 @@ class ProductController extends Controller
     }
 
     // Show product by flag
-    protected function getProductsByFlag(string $flag)
+    public function getProductsByFlag(string $flag)
     {
         $categories = $this->fetchCategories(); // for the product submenu
 
@@ -348,7 +371,11 @@ class ProductController extends Controller
         }
         // dd($products);
 
-        return view('user.product', compact('categories', 'products'));
+        $breadcrumbs = [
+            ['title' => ucwords($flag->name), 'url' => route('product.category', strtolower($flag->name))]
+        ];
+
+        return view('user.product', compact('categories', 'products', 'breadcrumbs'));
     }
 
     private function fetchProductsForTableContent()

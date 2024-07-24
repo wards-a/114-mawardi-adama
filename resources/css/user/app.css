@@ -64,6 +64,14 @@ input[type=number] {
     @apply top-12;
 } */
 
+.navbar.shrink .form-search input[name^="keywords"] {
+    @apply leading-3 h-8;
+}
+
+.navbar.shrink .form-search svg {
+    @apply w-4 h-4;
+}
+
 /* ========== Form Style Focused ========== */
 .focused {
     @apply -top-3 text-xs;

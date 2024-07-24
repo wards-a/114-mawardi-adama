@@ -73,8 +73,8 @@
                     </a>
                 </div>
                 <button type="button"
-                    class="btn-request-quotation text-sm basis-2/4 bg-sky-600 text-white py-1 rounded-full active:bg-sky-800 md:basis-full md:order-first">Minta
-                    Penawaran</button>
+                    class="btn-request-quotation text-sm basis-2/4 bg-sky-600 text-white py-1 rounded-full active:bg-sky-800 md:basis-full md:order-first">Buat
+                    Pesanan</button>
             </div>
         </div>
     </div>

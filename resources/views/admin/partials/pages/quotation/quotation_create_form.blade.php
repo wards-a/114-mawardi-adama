@@ -20,12 +20,12 @@
                     <div class="flex shrink-0 basis-full md:basis-1/2 mt-5 pe-5">
                         <div class="flex flex-col items-end gap-4 w-full">
                             <h1 class="text-xl font-semibold text-left rtl:text-right text-gray-900 dark:text-white">
-                                Quotation
+                                Invoice
                             </h1>
                             <div class="flex items-center gap-12">
                                 <span class="text-sm text-gray-900 dark:text-white">Referensi</span>
                                 <x-form.text-input name="quotation_reference" label="" class=""
-                                    placeholder="Quo/2024/0164" />
+                                    placeholder="INV/2024/0164" />
                             </div>
                             <div class="flex items-center gap-4">
                                 <span class="text-sm text-gray-900 dark:text-white">Tanggal</span>
@@ -48,7 +48,7 @@
                         </div>
                     </div>
                     <div class="flex flex-col shrink-0 gap-4 basis-full md:ps-6 md:basis-1/2 md:max-w-sm">
-                        <span class="text-sm text-gray-800 font-medium dark:text-white">Penawaran Untuk</span>
+                        <span class="text-sm text-gray-800 font-medium dark:text-white">Penagihan Untuk</span>
                         <div class="border-b border-gray-500 w-11/12 dark:border-white"></div>
                         <span class="text-sm text-gray-900 font-semibold dark:text-white">{{ $order->customer_name }}</span>
                         <div class="text-sm text-gray-700 leading-relaxed dark:text-white">
